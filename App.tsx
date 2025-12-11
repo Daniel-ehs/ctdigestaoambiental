@@ -444,7 +444,6 @@ const App: React.FC = () => {
           <div className="px-10 py-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 text-center">
             <p className="text-xs text-slate-400">
               Acesso restrito a colaboradores autorizados.
-              <br />Admin Padrão: admin@ctdi.com / admin
             </p>
           </div>
         </div>
