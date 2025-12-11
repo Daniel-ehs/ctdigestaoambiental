@@ -1,5 +1,6 @@
 
 
+import crypto from 'node:crypto';
 import { ElectricityRecord, WasteRecord, WaterRecord, User } from './types';
 
 export const INITIAL_UNITS = ['Galpão 6', 'Galpão 7', 'Galpão 20', 'Galpão 21'];
