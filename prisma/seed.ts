@@ -13,7 +13,7 @@ async function main() {
     if (!existingSettings) {
         await prisma.systemSettings.create({
             data: {
-                units: JSON.stringify(INITIAL_UNITS),
+                units: INITIAL_UNITS,
                 electricityGoal: INITIAL_GOAL,
                 waterGoal: INITIAL_WATER_GOAL,
                 wasteGoal: INITIAL_WASTE_GOAL,
@@ -33,7 +33,7 @@ async function main() {
                 email: user.email,
                 password: user.password!, // Note: In production hash this!
                 role: user.role,
-                allowedUnits: JSON.stringify(user.allowedUnits || []),
+                allowedUnits: user.allowedUnits || [],
             },
         });
         console.log(`Upserted user: ${upsertUser.email}`);

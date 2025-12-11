@@ -34,27 +34,17 @@ app.get('/api/users', async (req, res) => {
     const users = await prisma.user.findMany();
     const sanitized = users.map(u => {
         const { password, ...rest } = u;
-        return {
-            ...rest,
-            allowedUnits: u.allowedUnits ? JSON.parse(u.allowedUnits) : []
-        };
+        return rest;
     });
     res.json(sanitized);
 });
 
 app.post('/api/users', async (req, res) => {
     try {
-        const userData = { ...req.body };
-        if (userData.allowedUnits) {
-            userData.allowedUnits = JSON.stringify(userData.allowedUnits);
-        }
-        const user = await prisma.user.create({ data: userData });
-        // Return with parsed array
-        const { password, ...rest } = user;
-        res.json({
-            ...rest,
-            allowedUnits: user.allowedUnits ? JSON.parse(user.allowedUnits) : []
-        });
+        const user = await prisma.user.create({ data: req.body });
+        // Remove password from response
+        const { password, ...userWithoutPass } = user;
+        res.json(userWithoutPass);
     } catch (e) {
         console.error(e);
         res.status(500).json({ error: 'Failed to create user' });
@@ -63,19 +53,12 @@ app.post('/api/users', async (req, res) => {
 
 app.put('/api/users/:id', async (req, res) => {
     try {
-        const userData = { ...req.body };
-        if (userData.allowedUnits) {
-            userData.allowedUnits = JSON.stringify(userData.allowedUnits);
-        }
         const user = await prisma.user.update({
             where: { id: req.params.id },
-            data: userData
+            data: req.body
         });
         const { password, ...rest } = user;
-        res.json({
-            ...rest,
-            allowedUnits: user.allowedUnits ? JSON.parse(user.allowedUnits) : []
-        });
+        res.json(rest);
     } catch (e) {
         console.error(e);
         res.status(500).json({ error: 'Failed to update user' });
@@ -94,38 +77,20 @@ app.delete('/api/users/:id', async (req, res) => {
 // --- Settings ---
 app.get('/api/settings', async (req, res) => {
     const settings = await prisma.systemSettings.findFirst();
-    if (settings) {
-        res.json({
-            ...settings,
-            units: settings.units ? JSON.parse(settings.units) : []
-        });
-    } else {
-        res.json({ units: [], electricityGoal: 0, waterGoal: 0, wasteGoal: 0 });
-    }
+    res.json(settings || { units: [], electricityGoal: 0, waterGoal: 0, wasteGoal: 0 });
 });
 
 app.post('/api/settings', async (req, res) => {
-    const settingsData = { ...req.body };
-    if (settingsData.units) {
-        settingsData.units = JSON.stringify(settingsData.units);
-    }
-
     const first = await prisma.systemSettings.findFirst();
     if (first) {
         const updated = await prisma.systemSettings.update({
             where: { id: first.id },
-            data: settingsData
+            data: req.body
         });
-        res.json({
-            ...updated,
-            units: updated.units ? JSON.parse(updated.units) : []
-        });
+        res.json(updated);
     } else {
-        const created = await prisma.systemSettings.create({ data: settingsData });
-        res.json({
-            ...created,
-            units: created.units ? JSON.parse(created.units) : []
-        });
+        const created = await prisma.systemSettings.create({ data: req.body });
+        res.json(created);
     }
 });
 

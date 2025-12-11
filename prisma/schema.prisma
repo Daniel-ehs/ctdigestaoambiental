@@ -3,8 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -13,7 +13,7 @@ model User {
   email        String   @unique
   password     String
   role         String   // 'manager' or 'viewer'
-  allowedUnits String // Stored as JSON string
+  allowedUnits String[] // Array of strings for allowed units
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
@@ -54,7 +54,7 @@ model WasteRecord {
 
 model SystemSettings {
   id              String   @id @default(uuid())
-  units           String // Stored as JSON string
+  units           String[]
   electricityGoal Float
   waterGoal       Float
   wasteGoal       Float
