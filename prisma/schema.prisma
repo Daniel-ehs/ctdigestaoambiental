@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  password     String
+  role         String   // 'manager' or 'viewer'
+  allowedUnits String // Stored as JSON string
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ElectricityRecord {
+  id           String   @id @default(uuid())
+  date         String   // YYYY-MM-DD
+  unit         String
+  cpflKwh      Float
+  cpflCost     Float
+  floraKwh     Float
+  floraCost    Float
+  floraSavings Float
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model WaterRecord {
+  id        String   @id @default(uuid())
+  date      String   // YYYY-MM-DD
+  unit      String
+  volume    Float
+  cost      Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WasteRecord {
+  id          String   @id @default(uuid())
+  date        String   // YYYY-MM-DD
+  type        String
+  category    String   // 'Reciclável' or 'Não Reciclável'
+  weight      Float
+  financial   Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model SystemSettings {
+  id              String   @id @default(uuid())
+  units           String // Stored as JSON string
+  electricityGoal Float
+  waterGoal       Float
+  wasteGoal       Float
+  updatedAt       DateTime @updatedAt
+}
