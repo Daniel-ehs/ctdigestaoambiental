@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start:dev": "concurrently \"vite\" \"nodemon server.cjs\"",
-    "start:prod": "npx prisma db push && npx prisma db seed && node server.cjs",
+    "start:prod": "npx prisma db push && node server.cjs",
     "prisma:seed": "tsx prisma/seed.ts",
     "generate": "prisma generate",
     "db:push": "prisma db push"
