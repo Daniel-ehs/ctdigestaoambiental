@@ -303,7 +303,7 @@ export const ElectricityDashboard: React.FC<Props> = ({ data, units, goal, onUpd
             title="Baixar Relatório Completo"
           >
             {isExporting ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
-            {isExporting ? 'Gerando...' : 'Exportar'}
+            {isExporting ? '...' : ''}
           </button>
         </div>
       </div>

@@ -331,7 +331,7 @@ const WaterDashboard: React.FC<Props> = ({ data, units, goal, onUpdate, onAdd, o
             title="Baixar Relatório Completo"
           >
             {isExporting ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
-            {isExporting ? 'Gerando...' : 'Exportar'}
+            {isExporting ? '...' : ''}
           </button>
         </div>
       </div>
