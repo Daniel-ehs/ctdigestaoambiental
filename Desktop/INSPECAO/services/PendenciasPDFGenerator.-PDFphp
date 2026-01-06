@@ -1,0 +1,178 @@
+<?php
+/**
+ * PendenciasPDFGenerator
+ * Gera um relatório profissional em PDF para itens com status "Em Aberto" ou "Prazo Vencido".
+ */
+
+// Garante que a constante BASE_PATH exista, apontando para a raiz do projeto.
+if (!defined('BASE_PATH')) {
+    define('BASE_PATH', dirname(__DIR__)); 
+}
+
+// Carrega a biblioteca TCPDF a partir do caminho que já funciona no seu sistema.
+require_once BASE_PATH . '/vendor/tecnickcom/tcpdf/tcpdf.php';
+
+
+// =================================================================================
+// CLASSE PERSONALIZADA PARA CABEÇALHO E RODAPÉ MODERNOS
+// =================================================================================
+class ModernTCPDF extends TCPDF {
+    
+    // Sobrescreve o método Header para criar um cabeçalho personalizado em cada página.
+    public function Header() {
+        // --- LOGO ---
+        $logoPath = BASE_PATH . '/assets/images/logos.png';
+        if (file_exists($logoPath)) {
+            $this->Image($logoPath, 10, 10, 40, 0, 'PNG');
+        }
+
+        // --- TÍTULO ---
+        $this->SetY(15);
+        $this->SetFont('helvetica', 'B', 18);
+        $this->SetTextColor(80, 80, 80);
+        $this->Cell(0, 15, 'Ações Pendentes', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+
+        // --- LINHA SEPARADORA ---
+        $this->Line(10, 25, 287, 25);
+    }
+
+    // Sobrescreve o método Footer para um rodapé limpo.
+    public function Footer() {
+        $this->SetY(-15);
+        $this->Line(10, $this->GetY(), 287, $this->GetY());
+        $this->SetFont('helvetica', 'I', 8);
+        $this->SetTextColor(128, 128, 128);
+        $this->Cell(0, 10, 'Página ' . $this->getAliasNumPage() . ' de ' . $this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+    }
+}
+
+
+class PendenciasPDFGenerator {
+
+    // Função auxiliar para desenhar o cabeçalho da tabela.
+    private function drawTableHeader($pdf) {
+        $pdf->SetY(30); // Posição fixa para o início da tabela.
+        $pdf->SetFont('helvetica', 'B', 10);
+        $pdf->SetFillColor(70, 130, 180);
+        $pdf->SetTextColor(255, 255, 255);
+        $pdf->SetDrawColor(70, 130, 180);
+        $pdf->SetLineWidth(0.3);
+        
+        $w = [20, 157, 30, 30, 20, 20];
+        $header = ['Nº', 'Apontamento', 'Setor', 'Local', 'Status', 'Prazo'];
+
+        foreach($header as $i => $head) {
+            $pdf->Cell($w[$i], 9, $head, 1, 0, 'C', 1);
+        }
+        $pdf->Ln();
+    }
+
+    public function gerar(array $inspecoes, int $empresaId) {
+        try {
+            // Usa a nossa classe personalizada ModernTCPDF.
+            $pdf = new ModernTCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
+
+            // --- CONFIGURAÇÕES DO DOCUMENTO ---
+            $pdf->SetCreator('Sistema de Gestão de Inspeções');
+            $pdf->SetAuthor('Daniel Santos');
+            $pdf->SetTitle('Relatório de Ações Pendentes');
+            $pdf->SetMargins(10, 30, 10);
+            $pdf->SetHeaderMargin(0);
+            $pdf->SetFooterMargin(15);
+            $pdf->SetAutoPageBreak(true, 20); // Ativa o auto page break padrão para segurança.
+
+            // AJUSTE: Garante que os apontamentos estejam em ordem numérica crescente.
+            usort($inspecoes, function($a, $b) {
+                return (int)($a['numero_inspecao'] ?? 0) <=> (int)($b['numero_inspecao'] ?? 0);
+            });
+
+            // Adiciona a primeira página. O nosso método Header() será chamado.
+            $pdf->AddPage();
+            $this->drawTableHeader($pdf);
+
+            // --- CONTEÚDO DA TABELA ---
+            $pdf->SetFont('helvetica', '', 9);
+            $pdf->SetFillColor(245, 245, 250);
+            $pdf->SetTextColor(50, 50, 50);
+            $fill = false;
+            $w = [20, 157, 30, 30, 20, 20]; // Larguras das colunas
+            $itemCountOnPage = 0;
+            $totalInspecoes = count($inspecoes);
+
+            foreach ($inspecoes as $index => $inspecao) {
+                // Prepara os dados da linha
+                $num = $inspecao['numero_inspecao'] ?? 'N/A';
+                
+                // AJUSTE: Quebra o apontamento a cada 100 caracteres.
+                $apontamento = $inspecao['apontamento'] ?? 'N/A';
+                $apontamento = wordwrap($apontamento, 100, "\n", true);
+
+                $setor = $inspecao['setor_nome'] ?? 'N/A';
+                $local = $inspecao['local_nome'] ?? 'N/A';
+                $status = $inspecao['status'] ?? 'N/A';
+                $prazo = !empty($inspecao['prazo']) ? date('d/m/Y', strtotime($inspecao['prazo'])) : 'N/A';
+
+                // Calcula a altura necessária para a linha
+                $lineHeight = 5;
+                $numLines = $pdf->getNumLines($apontamento, $w[1]);
+                $rowHeight = $numLines * $lineHeight + 4;
+
+                // AJUSTE: Lógica de quebra de página robusta
+                $pageBreakTrigger = $pdf->getPageHeight() - $pdf->getBreakMargin();
+                if ($itemCountOnPage >= 14 || ($pdf->GetY() + $rowHeight > $pageBreakTrigger && $itemCountOnPage > 0)) {
+                    // Desenha a linha de fechamento da tabela anterior
+                    $pdf->Cell(array_sum($w), 0, '', 'T');
+                    // Cria a nova página e redesenha o cabeçalho.
+                    $pdf->AddPage();
+                    $this->drawTableHeader($pdf);
+                    // AJUSTE: Reseta a cor de fundo da linha e o contador para a nova página.
+                    $fill = false;
+                    $itemCountOnPage = 0;
+                }
+                
+                $startY = $pdf->GetY();
+                $currentX = $pdf->GetX();
+
+                $pdf->MultiCell($w[0], $rowHeight, $num, 'LR', 'C', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                $currentX += $w[0];
+                
+                $pdf->MultiCell($w[1], $rowHeight, $apontamento, 'LR', 'L', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                $currentX += $w[1];
+
+                $pdf->MultiCell($w[2], $rowHeight, $setor, 'LR', 'C', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                $currentX += $w[2];
+
+                $pdf->MultiCell($w[3], $rowHeight, $local, 'LR', 'C', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                $currentX += $w[3];
+                
+                if ($status === 'Prazo Vencido') {
+                    $pdf->SetTextColor(220, 38, 38);
+                }
+                $pdf->MultiCell($w[4], $rowHeight, $status, 'LR', 'C', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                $pdf->SetTextColor(50, 50, 50);
+                $currentX += $w[4];
+
+                $pdf->MultiCell($w[5], $rowHeight, $prazo, 'LR', 'C', $fill, 0, $currentX, $startY, true, 0, false, true, $rowHeight, 'M');
+                
+                $pdf->Ln($rowHeight);
+                $fill = !$fill;
+                $itemCountOnPage++;
+            }
+            
+            // Linha final da última tabela
+            $pdf->Cell(array_sum($w), 0, '', 'T');
+
+            // --- ENVIO DO PDF ---
+            if (ob_get_level()) {
+                ob_end_clean();
+            }
+            
+            $pdf->Output('relatorio_pendencias_' . date('Y-m-d') . '.pdf', 'I');
+            exit;
+
+        } catch (Exception $e) {
+            error_log("ERRO FATAL em PendenciasPDFGenerator: " . $e->getMessage() . " no arquivo " . $e->getFile() . " na linha " . $e->getLine());
+            die("Não foi possível gerar o relatório. O erro foi registrado e o administrador foi notificado.");
+        }
+    }
+}

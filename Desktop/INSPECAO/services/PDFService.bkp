@@ -1,0 +1,577 @@
+<?php
+/**
+ * Serviço para geração de PDFs
+ */
+error_log("PDFService.php: Arquivo carregado em " . date('Y-m-d H:i:s') . " - VERSÃO FUNDO1.JPG NA PÁGINA DE CAPA COM SETOR E LOCAL 5MM ACIMA, SETOR MAIOR E CORES POR TIPO DE APONTAMENTO 2025-06-15");
+
+if (!class_exists('TCPDF')) {
+    error_log("PDFService: Incluindo TCPDF de " . BASE_PATH . '/vendor/tecnickcom/tcpdf/tcpdf.php');
+    require_once BASE_PATH . '/vendor/tecnickcom/tcpdf/tcpdf.php';
+}
+
+/**
+ * Classe personalizada que estende TCPDF para cabeçalho, rodapé e fundo estilizado
+ */
+class CustomTCPDF extends TCPDF {
+    private $semana;
+    private $ano;
+    private $isCoverPage = false; // Rastrear página de capa
+
+    public function __construct($semana, $ano) {
+        parent::__construct('L', 'mm', 'A4', true, 'UTF-8', false);
+        $this->semana = $semana;
+        $this->ano = $ano;
+        $this->setPageFormat('A4', 'L');
+        // Zerar todas as margens e configurações que possam interferir
+        $this->SetMargins(0, 0, 0, true);
+        $this->SetHeaderMargin(0);
+        $this->SetFooterMargin(0);
+        $this->SetAutoPageBreak(false, 0);
+        $this->setPrintHeader(false);
+        $this->setPrintFooter(false);
+        $this->SetCellPadding(0);
+        error_log("CustomTCPDF->construct: Inicializado para semana {$semana}/{$ano}, formato A4 paisagem, margens e padding zerados");
+    }
+
+    public function setCoverPage($isCover) {
+        $this->isCoverPage = $isCover;
+        error_log("CustomTCPDF->setCoverPage: Definido isCoverPage como " . ($isCover ? 'true' : 'false'));
+    }
+
+    public function startPage($orientation = '', $format = '', $tocpage = false) {
+        parent::startPage($orientation, $format, false);
+        // Reforçar margens e padding zerados
+        $this->SetMargins(0, 0, 0, false);
+        $this->SetHeaderMargin(0);
+        $this->SetFooterMargin(0);
+        $this->SetCellPadding(0);
+        
+        // Usar fundo1.jpg para página de capa, fundo.jpg para outras
+        $backgroundImage = $this->isCoverPage ? BASE_PATH . '/assets/images/fundo1.jpg' : BASE_PATH . '/assets/images/fundo.jpg';
+        error_log("CustomTCPDF->startPage: Selecionada imagem de fundo: {$backgroundImage} (isCoverPage: " . ($this->isCoverPage ? 'true' : 'false') . ")");
+
+        if (file_exists($backgroundImage)) {
+            if (is_readable($backgroundImage)) {
+                try {
+                    list($imgWidth, $imgHeight) = @getimagesize($backgroundImage) ?: [0, 0];
+                    error_log("CustomTCPDF->startPage: Imagem {$backgroundImage} encontrada, dimensões originais: {$imgWidth}x{$imgHeight}px, permissões: " . substr(sprintf('%o', fileperms($backgroundImage)), -4));
+                    // Definir posição com deslocamento de 10mm à direita
+                    $pageWidth = 297;
+                    $pageHeight = 210;
+                    $imgWidthMm = 297; // Forçar largura total
+                    $imgHeightMm = 210; // Forçar altura total
+                    $x = 10; // Deslocar 10mm à direita
+                    $y = 0; // Manter no topo
+                    error_log("CustomTCPDF->startPage: Posição calculada - x={$x}mm, y={$y}mm, largura={$imgWidthMm}mm, altura={$imgHeightMm}mm");
+                    $this->Image(
+                        $backgroundImage,
+                        $x, $y, // Posição com deslocamento
+                        $imgWidthMm, $imgHeightMm, // Dimensões exatas
+                        '', // Tipo de imagem (auto-detectado)
+                        '', // Sem link
+                        'C', // Alinhamento centralizado
+                        false, // Não redimensionar proporcionalmente
+                        300, // DPI
+                        '', // Sem alinhamento de parágrafo
+                        false, // Sem máscara
+                        false, // Sem borda
+                        'F' // Forçar preenchimento total
+                    );
+                    error_log("CustomTCPDF->startPage: Imagem de fundo {$backgroundImage} esticada para EXATAMENTE 297mm x 210mm e DESLOCADA 10mm À DIREITA em x={$x}mm, y={$y}mm, página {$this->getPage()}");
+                } catch (Exception $e) {
+                    error_log("CustomTCPDF->startPage: Erro ao carregar imagem de fundo {$backgroundImage}: " . $e->getMessage());
+                }
+            } else {
+                error_log("CustomTCPDF->startPage: Imagem {$backgroundImage} existe, mas não é legível (verifique permissões)");
+            }
+        } else {
+            error_log("CustomTCPDF->startPage: Imagem de fundo não encontrada: {$backgroundImage}");
+        }
+    }
+
+    public function Header() {
+        error_log("CustomTCPDF->Header: Cabeçalho vazio chamado para página {$this->getPage()}");
+    }
+
+    public function getImageH($file, $width) {
+        list($originalWidth, $originalHeight) = getimagesize($file);
+        return ($width * $originalHeight) / $originalWidth;
+    }
+
+    public function Footer() {
+        $this->SetY(-15);
+        $this->SetFont('helvetica', 'I', 8);
+        $this->SetTextColor(107, 114, 128);
+
+        try {
+            $baseDate = new DateTime('2024-12-30');
+            $baseDate->modify('+' . ($this->semana - 1) . ' weeks');
+            $startDate = clone $baseDate;
+            $startDate->modify('Monday this week');
+            $endDate = clone $baseDate;
+            $endDate->modify('Sunday this week');
+            $startDateStr = $startDate->format('d/m/Y');
+            $endDateStr = $endDate->format('d/m/Y');
+        } catch (Exception $e) {
+            error_log("CustomTCPDF->Footer: Erro ao calcular datas: " . $e->getMessage());
+            $startDateStr = 'N/A';
+            $endDateStr = 'N/A';
+        }
+
+        $semanaText = 'Semana ' . $this->semana . ' (' . $startDateStr . ' a ' . $endDateStr . ')';
+        $reportText = 'Relatório de Inspeções de EHS - ' . $semanaText;
+        $this->SetX(15);
+        $this->Cell(0, 10, $reportText, 0, 0, 'L');
+
+        $this->SetX(297 - 15);
+        $this->Cell(0, 10, 'Página ' . $this->getAliasNumPage() . '/' . $this->getAliasNbPages(), 0, 0, 'R');
+        error_log("CustomTCPDF->Footer: Rodapé renderizado para página {$this->getPage()}");
+    }
+}
+
+class PDFService {
+    private $pdf;
+
+    private function ensurePdfDirIsReady() {
+        if (!defined('PDFS_DIR')) {
+            error_log("Erro Crítico: Constante PDFS_DIR não definida.");
+            return false;
+        }
+        if (!is_dir(PDFS_DIR)) {
+            if (!mkdir(PDFS_DIR, 0775, true)) {
+                error_log("Erro Crítico: Não foi possível criar o diretório de PDFs: " . PDFS_DIR);
+                return false;
+            }
+            error_log("Diretório de PDFs criado: " . PDFS_DIR);
+        }
+        
+        if (!is_writable(PDFS_DIR)) {
+            error_log("Erro Crítico: O diretório de PDFs não tem permissão de escrita: " . PDFS_DIR);
+            if (!@chmod(PDFS_DIR, 0775)) {
+                error_log("Falha ao tentar alterar permissões para " . PDFS_DIR);
+                return false;
+            }
+            if (!is_writable(PDFS_DIR)) {
+                error_log("Erro Crítico: Mesmo após tentar, o diretório de PDFs não tem permissão de escrita de PDFs: " . PDFS_DIR);
+                return false;
+            }
+            error_log("Permissões do diretório de PDFs ajustadas para 0775.");
+        }
+        return true;
+    }
+
+    public function gerarPlanoPDF($plano) {
+        error_log("PDFService->gerarPlanoPDF: Iniciando para plano ID {$plano['id']}");
+        if (!$plano) {
+            error_log("PDFService->gerarPlanoPDF: Dados do plano não fornecidos.");
+            return null;
+        }
+        
+        if (!$this->ensurePdfDirIsReady()) {
+            return null;
+        }
+        
+        $this->pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+        
+        $this->pdf->SetCreator('Sistema de Inspeções de Segurança');
+        $this->pdf->SetAuthor('Sistema de Inspeção');
+        $this->pdf->SetTitle('Plano de Ação - #' . $plano['id']);
+        $this->pdf->SetSubject('Plano de Ação');
+        $this->pdf->SetKeywords('Plano de Ação, Inspeção, Segurança');
+        
+        $this->pdf->setPrintHeader(false);
+        $this->pdf->setPrintFooter(false);
+        
+        $this->pdf->SetMargins(15, 15, 15);
+        $this->pdf->SetAutoPageBreak(true, 15);
+        
+        $this->pdf->AddPage();
+        
+        $logoPath = BASE_PATH . '/assets/images/logo.png';
+        if (file_exists($logoPath)) {
+            $this->pdf->Image($logoPath, 15, 15, 30, 0, 'PNG', '', 'T', false, 300);
+        }
+        
+        $this->pdf->SetFont('times', 'B', 16);
+        $this->pdf->SetTextColor(30, 64, 175);
+        $this->pdf->Cell(0, 10, 'PLANO DE AÇÃO', 0, 1, 'C');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->SetTextColor(55, 65, 81);
+        $this->pdf->Cell(0, 5, 'Inspeção de Segurança #' . $plano['inspecao_id'], 0, 1, 'C');
+        
+        $this->pdf->SetDrawColor(30, 64, 175);
+        $this->pdf->Line(15, $this->pdf->GetY() + 5, 195, $this->pdf->GetY() + 5);
+        $this->pdf->Ln(10);
+        
+        $this->pdf->SetFont('times', 'B', 12);
+        $this->pdf->Cell(0, 10, 'Dados da Inspeção', 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Data:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(60, 7, formatDate($plano['inspecao_data']), 0, 0, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(30, 7, 'Semana:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, $plano['inspecao_semana_ano'], 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Setor:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(60, 7, htmlspecialchars($plano['setor_nome']), 0, 0, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(30, 7, 'Local:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, htmlspecialchars($plano['local_nome']), 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Tipo:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, htmlspecialchars($plano['tipo_nome']), 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Responsável:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, htmlspecialchars($plano['inspecao_responsavel']), 0, 1, 'L');
+        
+        $this->pdf->Ln(5);
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(0, 7, 'Apontamento (Situação Encontrada):', 0, 1, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->MultiCell(0, 7, htmlspecialchars($plano['inspecao_apontamento']), 0, 'L', false, 1);
+        
+        if (!empty($plano['inspecao_risco_consequencia'])) {
+            $this->pdf->SetFont('times', 'B', 10);
+            $this->pdf->Cell(0, 7, 'Risco/Consequência:', 0, 1, 'L');
+            $this->pdf->SetFont('times', '', 10);
+            $this->pdf->MultiCell(0, 7, htmlspecialchars($plano['inspecao_risco_consequencia']), 0, 'L', false, 1);
+        }
+        
+        $this->pdf->Ln(5);
+        
+        $this->pdf->SetFont('times', 'B', 12);
+        $this->pdf->Cell(0, 10, 'Plano de Ação', 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Data da Ação:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, formatDate($plano['data_acao']), 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(40, 7, 'Data de Criação:', 0, 0, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->Cell(0, 7, formatDate($plano['data_criacao']), 0, 1, 'L');
+        
+        $this->pdf->SetFont('times', 'B', 10);
+        $this->pdf->Cell(0, 7, 'Descrição da Ação Tomada:', 0, 1, 'L');
+        $this->pdf->SetFont('times', '', 10);
+        $this->pdf->MultiCell(0, 7, htmlspecialchars($plano['descricao_acao']), 0, 'L', false, 1);
+        
+        $this->pdf->Ln(5);
+        
+        $this->pdf->SetFont('times', 'B', 12);
+        $this->pdf->Cell(0, 10, 'Evidências Fotográficas', 0, 1, 'L');
+        
+        $fotoAntesPath = !empty($plano['inspecao_foto_antes']) ? FOTOS_ANTES_DIR . '/' . $plano['inspecao_foto_antes'] : null;
+        $fotoDepoisPath = !empty($plano['foto_depois']) ? FOTOS_DEPOIS_DIR . '/' . $plano['foto_depois'] : null;
+        
+        $temFotoAntes = $fotoAntesPath && file_exists($fotoAntesPath);
+        $temFotoDepois = $fotoDepoisPath && file_exists($fotoDepoisPath);
+        
+        if ($temFotoAntes || $temFotoDepois) {
+            $this->pdf->Ln(5);
+            
+            $imageWidth = 85;
+            $imageHeight = 0;
+            $x1 = 15;
+            $x2 = 140;
+            $y = $this->pdf->GetY();
+
+            if ($temFotoAntes) {
+                $this->pdf->SetFont('times', 'B', 10);
+                $this->pdf->Cell($imageWidth, 7, 'Antes:', 0, 0, 'L');
+            }
+            
+            if ($temFotoDepois) {
+                $this->pdf->SetX($x2);
+                $this->pdf->SetFont('times', 'B', 10);
+                $this->pdf->Cell($imageWidth, 7, 'Depois:', 0, 1, 'L');
+            } else {
+                $this->pdf->Ln();
+            }
+
+            $y = $this->pdf->GetY();
+            $maxImageHeight = 0;
+
+            if ($temFotoAntes) {
+                try {
+                    $this->pdf->Image($fotoAntesPath, $x1, $y, $imageWidth, $imageHeight, '', '', 'T', false, 300);
+                    $maxImageHeight = max($maxImageHeight, $this->pdf->getImageRBY() - $y);
+                } catch (Exception $e) {
+                    error_log('Erro ao carregar imagem Antes: ' . $e->getMessage());
+                    $this->pdf->SetXY($x1, $y);
+                    $this->pdf->Cell($imageWidth, 10, 'Erro ao carregar imagem', 1, 0, 'C');
+                    $maxImageHeight = max($maxImageHeight, 10);
+                }
+            }
+            
+            if ($temFotoDepois) {
+                try {
+                    $this->pdf->Image($fotoDepoisPath, $x2, $y, $imageWidth, $imageHeight, '', '', 'T', false, 300);
+                    $maxImageHeight = max($maxImageHeight, $this->pdf->getImageRBY() - $y);
+                } catch (Exception $e) {
+                    error_log('Erro ao carregar imagem Depois: ' . $e->getMessage());
+                    $this->pdf->SetXY($x2, $y);
+                    $this->pdf->Cell($imageWidth, 10, 'Erro ao carregar imagem', 1, 0, 'C');
+                    $maxImageHeight = max($maxImageHeight, 10);
+                }
+            }
+            
+            $this->pdf->SetY($y + $maxImageHeight + 5);
+        } else {
+            $this->pdf->SetFont('Helvetica', '', 10);
+            $this->pdf->Cell(0, 7, 'Nenhuma foto disponível.', 0, 1, 'L');
+        }
+        
+        $this->pdf->SetY(-25);
+        $this->pdf->SetFont('Helvetica', 'I', 8);
+        $this->pdf->SetTextColor(107, 114, 128);
+        $this->pdf->Cell(0, 10, 'Sistema de Inspeções de Segurança - Plano de Ação #' . $plano['id'], 0, 1, 'C');
+        $this->pdf->Cell(0, 10, 'Gerado em: ' . date('d/m/Y H:i'), 0, 1, 'C');
+        
+        $nomeArquivo = 'plano_acao_' . $plano['id'] . '_' . date('YmdHis') . '.pdf';
+        $caminhoArquivo = PDFS_DIR . '/' . $nomeArquivo;
+        
+        try {
+            $this->pdf->Output($caminhoArquivo, 'F');
+            error_log("PDFService->gerarPlanoPDF: PDF gerado em $caminhoArquivo");
+            return $caminhoArquivo;
+        } catch (Exception $e) {
+            error_log('Erro ao salvar PDF: ' . $e->getMessage());
+            return null;
+        }
+    }
+    
+    public function gerarRelatorioSemanal($inspecoes, $semana, $ano, $incluirFotos = false) {
+        error_log("PDFService->gerarRelatorioSemanal: Iniciando para semana $semana/$ano, incluirFotos: " . ($incluirFotos ? 'true' : 'false'));
+        
+        if (empty($inspecoes)) {
+            error_log('PDFService->gerarRelatorioSemanal: Nenhuma inspeção fornecida.');
+            return null;
+        }
+
+        if (!$this->ensurePdfDirIsReady()) {
+            error_log('PDFService->gerarRelatorioSemanal: Falha ao verificar diretório de PDFs.');
+            return null;
+        }
+        
+        try {
+            $this->pdf = new CustomTCPDF($semana, $ano);
+            
+            $this->pdf->SetCreator('Sistema de Inspeções de Segurança');
+            $this->pdf->SetAuthor('Sistema de Inspeções');
+            $this->pdf->SetTitle('Relatório Semanal - Semana ' . $semana . '/' . $ano);
+            $this->pdf->SetSubject('Relatório Semanal de Inspeções');
+            $this->pdf->SetKeywords('Relatório, Inspeção, Segurança, Semana ' . $semana);
+            
+            $this->pdf->setPrintHeader(true);
+            $this->pdf->setPrintFooter(true);
+            
+            $this->pdf->SetMargins(15, 40, 15);
+            $this->pdf->SetAutoPageBreak(true, 15);
+            
+            $inspecoesAgrupadas = [];
+            foreach ($inspecoes as $inspecao) {
+                $chave = ($inspecao['setor_nome'] ?? 'N/A') . '|' . ($inspecao['local_nome'] ?? 'N/A');
+                $inspecoesAgrupadas[$chave][] = $inspecao;
+            }
+            
+            foreach ($inspecoesAgrupadas as $chave => $inspecoesGrupo) {
+                list($setorNome, $localNome) = explode('|', $chave);
+                
+                // Página de capa para setor e local
+                $this->pdf->setCoverPage(true); // Ativar fundo1.jpg
+                $this->pdf->AddPage();
+                $this->pdf->setCoverPage(false); // Desativar para próximas páginas
+                $this->pdf->SetY(90); // Subir 5mm
+                $this->pdf->SetFont('helvetica', 'B', 35); // Setor com fonte maior
+                $this->pdf->SetTextColor(30, 64, 175);
+                $this->pdf->Cell(0, 15, htmlspecialchars($setorNome), 0, 1, 'C');
+                $this->pdf->SetFont('helvetica', 'B', 20); // Local com fonte menor
+                $this->pdf->Cell(0, 15, htmlspecialchars($localNome), 0, 1, 'C');
+                error_log("PDFService->gerarRelatorioSemanal: Página de capa renderizada para Setor: {$setorNome}, Local: {$localNome}, posição y=90mm, fontes 35/20");
+                
+                // Cada inspeção em uma nova página
+                foreach ($inspecoesGrupo as $inspecao) {
+                    error_log("PDFService->gerarRelatorioSemanal: Processando inspeção ID {$inspecao['id']}");
+                    
+                    // Nova página para o apontamento
+                    $this->pdf->AddPage();
+                    $yStart = 45; // Subir 5mm
+                    $this->pdf->SetY($yStart);
+                    
+                    $fotoPath = null;
+                    if ($incluirFotos && !empty($inspecao['foto_antes'])) {
+                        $fotoNome = basename(trim($inspecao['foto_antes']));
+                        $fotoPath = FOTOS_ANTES_DIR . '/' . $fotoNome;
+                        error_log("PDFService->gerarRelatorioSemanal: Verificando foto em $fotoPath (nome original: {$inspecao['foto_antes']})");
+                    }
+                    
+                    $temFoto = $fotoPath && file_exists($fotoPath) && is_readable($fotoPath);
+                    
+                    if ($temFoto) {
+                        try {
+                            error_log("PDFService->gerarRelatorioSemanal: Tentando carregar imagem $fotoPath");
+                            $fotoWidth = 85; // Manter largura
+                            $fotoHeight = 120; // Manter altura
+                            $fotoX = 38.5; // Deslocar 10mm à direita
+                            $fotoY = $yStart;
+                            $this->pdf->Image($fotoPath, $fotoX, $fotoY, $fotoWidth, $fotoHeight, '', '', 'T', true, 300, '', false, false, 0);
+                            error_log("PDFService->gerarRelatorioSemanal: Imagem $fotoPath carregada com sucesso em x={$fotoX}mm, y={$fotoY}mm, largura={$fotoWidth}mm, altura={$fotoHeight}mm");
+                        } catch (Exception $e) {
+                            error_log("PDFService->gerarRelatorioSemanal: Erro ao carregar imagem: " . $e->getMessage());
+                            $this->pdf->SetXY($fotoX, $yStart);
+                            $this->pdf->SetFont('times', '', 10);
+                            $this->pdf->SetTextColor(220, 38, 38);
+                            $this->pdf->Cell($fotoWidth, 10, 'Erro ao carregar imagem', 0, 0, 'C');
+                        }
+                    } else {
+                        error_log("PDFService->gerarRelatorioSemanal: Imagem não disponível para inspeção {$inspecao['id']}.");
+                        $this->pdf->SetXY($fotoX, $yStart);
+                        $this->pdf->SetFont('times', 'I', 10);
+                        $this->pdf->SetTextColor(107, 114, 128);
+                        $this->pdf->Cell(85, 120, 'Nenhuma imagem disponível', 0, 0, 'C');
+                    }
+                    
+                    // INÍCIO: Adição para exibir Resolvido.png ou Resolver.png abaixo da foto_antes
+                    $statusImagePath = ($inspecao['status'] ?? '') === 'Concluído' 
+                        ? BASE_PATH . '/assets/images/Resolvido.png' 
+                        : BASE_PATH . '/assets/images/Resolver.png';
+                    $statusImageWidth = 60; // Mesma largura da foto_antes
+                    $statusImageHeight = 8; // Altura ajustada para a imagem de status
+                    $statusImageX = 185; // Alinhado com foto_antes
+                    $statusImageY = $yStart + 120 + 15; // Abaixo da foto_antes (120mm + 5mm de espaçamento)
+                    
+                    if (file_exists($statusImagePath) && is_readable($statusImagePath)) {
+                        try {
+                            error_log("PDFService->gerarRelatorioSemanal: Tentando carregar imagem de status $statusImagePath para inspeção ID {$inspecao['id']}");
+                            $this->pdf->Image(
+                                $statusImagePath, 
+                                $statusImageX, 
+                                $statusImageY, 
+                                $statusImageWidth, 
+                                $statusImageHeight, 
+                                '', // Tipo de imagem (auto-detectado)
+                                '', // Sem link
+                                'T', // Alinhamento ao topo
+                                true, // Redimensionar proporcionalmente
+                                300, // DPI
+                                '', // Sem alinhamento de parágrafo
+                                false, // Sem máscara
+                                false, // Sem borda
+                                0 // Sem ajuste de página
+                            );
+                            error_log("PDFService->gerarRelatorioSemanal: Imagem de status $statusImagePath carregada com sucesso em x={$statusImageX}mm, y={$statusImageY}mm, largura={$statusImageWidth}mm, altura={$statusImageHeight}mm");
+                        } catch (Exception $e) {
+                            error_log("PDFService->gerarRelatorioSemanal: Erro ao carregar imagem de status $statusImagePath: " . $e->getMessage());
+                            $this->pdf->SetXY($statusImageX, $statusImageY);
+                            $this->pdf->SetFont('times', '', 10);
+                            $this->pdf->SetTextColor(220, 38, 38);
+                            $this->pdf->Cell($statusImageWidth, 10, 'Erro ao carregar imagem de status', 0, 0, 'C');
+                        }
+                    } else {
+                        error_log("PDFService->gerarRelatorioSemanal: Imagem de status $statusImagePath não encontrada ou não legível para inspeção ID {$inspecao['id']}");
+                        $this->pdf->SetXY($statusImageX, $statusImageY);
+                        $this->pdf->SetFont('times', 'I', 10);
+                        $this->pdf->SetTextColor(107, 114, 128);
+                        $this->pdf->Cell($statusImageWidth, 10, 'Imagem de status indisponível', 0, 0, 'C');
+                    }
+                    // FIM: Adição para exibir Resolvido.png ou Resolver.png
+                    
+                    $xDados = 168; // Manter textos deslocados
+                    $this->pdf->SetXY($xDados, $yStart - 5); // Manter textos subidos
+                    $this->pdf->SetFont('times', 'B', 12);
+                    $this->pdf->SetTextColor(30, 64, 175);
+                    $this->pdf->Cell(110, 8, 'Apontamento #' . $inspecao['numero_inspecao'] . ':', 0, 1, 'L');
+                    $this->pdf->SetFont('times', '', 10);
+                    $this->pdf->SetTextColor(55, 65, 81);
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->MultiCell(110, 8, htmlspecialchars($inspecao['apontamento'] ?? 'Não informado'), 0, 'L', false, 1);
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->Ln(15);
+                    
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->SetFont('times', 'B', 12);
+                    $this->pdf->SetTextColor(30, 64, 175);
+                    $this->pdf->Cell(110, 8, 'Risco/Consequência:', 0, 1, 'L');
+                    $this->pdf->SetFont('times', '', 10);
+                    $this->pdf->SetTextColor(55, 65, 81);
+                    $this->pdf->SetX($xDados);
+                    // Definir cor com base no tipo_nome
+                    $tipoNome = htmlspecialchars($inspecao['tipo_nome'] ?? 'N/A');
+                    $color = 'rgb(55, 65, 81)'; // Cor padrão
+                    switch ($tipoNome) {
+                        case 'Oportunidade de Melhoria':
+                            $color = 'rgb(34, 197, 94)'; // Verde
+                            break;
+                        case 'Apontamento':
+                            $color = 'rgb(249, 115, 22)'; // Laranja
+                            break;
+                        case 'Falta de Uso de EPI':
+                            $color = 'rgb(168, 85, 247)'; // Roxo
+                            break;
+                        case 'Risco Potencial':
+                            $color = 'rgb(239, 68, 68)'; // Vermelho
+                            break;
+                        case 'Uso correto dos EPIs':
+                            $color = 'rgb(59, 130, 246)'; // Azul
+                            break;
+                    }
+                    error_log("PDFService->gerarRelatorioSemanal: Tipo {$tipoNome} renderizado com cor {$color}");
+                    // Usar HTML para estilizar tipo_nome com cor específica e negrito
+                    $riscoTexto = '<span style="color: ' . $color . '; font-weight: bold;">' . $tipoNome . ': </span>' . htmlspecialchars($inspecao['risco_consequencia'] ?? 'Não informado');
+                    $this->pdf->writeHTMLCell(110, 8, $xDados, $this->pdf->GetY(), $riscoTexto, 0, 1, false, true, 'L');
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->Ln(15);
+                    
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->SetFont('times', 'B', 12);
+                    $this->pdf->SetTextColor(30, 64, 175);
+                    $this->pdf->Cell(110, 8, 'Resolução/Ação Tomada:', 0, 1, 'L');
+                    $this->pdf->SetFont('times', '', 10);
+                    $this->pdf->SetTextColor(55, 65, 81);
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->MultiCell(110, 8, isset($inspecao['resolucao_proposta']) ? htmlspecialchars($inspecao['resolucao_proposta']) : 'Não informado', 0, 'L', false, 1);
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->Ln(15);
+                    
+                    $this->pdf->SetX($xDados);
+                    $this->pdf->SetFont('times', 'B', 12);
+                    $this->pdf->SetTextColor(30, 64, 175);
+                    $this->pdf->Cell(110, 8, 'Responsável/Prazo:', 0, 1, 'L');
+                    $this->pdf->SetFont('times', '', 10);
+                    $this->pdf->SetTextColor(55, 65, 81);
+                    $this->pdf->SetX($xDados);
+                    $responsavelPrazo = (isset($inspecao['responsavel']) ? htmlspecialchars($inspecao['responsavel']) : 'N/A') . ' - ' . (isset($inspecao['prazo']) ? formatDate($inspecao['prazo']) : 'N/A');
+                    $this->pdf->Cell(110, 8, $responsavelPrazo, 0, 1, 'L');
+                    error_log("PDFService->gerarRelatorioSemanal: Apontamento ID {$inspecao['id']} renderizado em nova página com textos em x={$xDados}mm, y=".($yStart-5)."mm");
+                }
+            }
+            
+            $nomeArquivo = 'relatorio_semanal_' . $semana . '_' . $ano . '_' . date('YmdHis') . '.pdf';
+            $caminhoArquivo = PDFS_DIR . '/' . $nomeArquivo;
+            
+            error_log("PDFService->gerarRelatorioSemanal: Tentando salvar PDF em $caminhoArquivo");
+            $this->pdf->Output($caminhoArquivo, 'F');
+            error_log("PDFService->gerarRelatorioSemanal: PDF gerado com sucesso em $caminhoArquivo");
+            return $caminhoArquivo;
+        } catch (Exception $e) {
+            error_log("PDFService->gerarRelatorioSemanal: Erro ao gerar PDF: " . $e->getMessage());
+            return null;
+        }
+    }
+}
+?>

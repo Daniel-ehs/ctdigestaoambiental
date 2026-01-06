@@ -1,0 +1,340 @@
+<?php
+/**
+ * Modelo de Projeto
+ */
+
+class Projeto {
+    private $db;
+    
+    public function __construct($db) {
+        $this->db = Database::getInstance()->getConnection();
+    }
+    
+    /**
+     * Obter projeto por ID
+     * 
+     * @param int $id ID do projeto
+     * @return array|false Dados do projeto ou false se não encontrado
+     */
+    public function obterPorId($id) {
+        $sql = "SELECT p.*, u.nome as usuario_nome, e.nome as empresa_nome
+                FROM projetos p
+                JOIN usuarios u ON p.usuario_id = u.id
+                LEFT JOIN empresas e ON p.empresa_id = e.id
+                WHERE p.id = ?";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([$id]);
+        return $stmt->fetch();
+    }
+    
+    /**
+     * Listar projetos com filtros
+     * 
+     * @param array $filtros Filtros a aplicar
+     * @param int $pagina Número da página
+     * @param int $porPagina Itens por página
+     * @return array Lista de projetos
+     */
+    public function listar($filtros = [], $pagina = 1, $porPagina = 10) {
+        $sql = "SELECT p.*, u.nome as usuario_nome, e.nome as empresa_nome
+                FROM projetos p
+                JOIN usuarios u ON p.usuario_id = u.id
+                LEFT JOIN empresas e ON p.empresa_id = e.id
+                WHERE 1=1";
+        
+        $params = [];
+        
+        // Aplicar filtros
+        if (!empty($filtros["status"])) {
+            $sql .= " AND p.status = ?";
+            $params[] = $filtros["status"];
+        }
+        
+        if (!empty($filtros["empresa_id"])) {
+            $sql .= " AND p.empresa_id = ?";
+            $params[] = $filtros["empresa_id"];
+        }
+        
+        if (!empty($filtros["prazo_inicio"]) && !empty($filtros["prazo_fim"])) {
+            $sql .= " AND p.prazo BETWEEN ? AND ?";
+            $params[] = $filtros["prazo_inicio"];
+            $params[] = $filtros["prazo_fim"];
+        } elseif (!empty($filtros["prazo_inicio"])) {
+            $sql .= " AND p.prazo >= ?";
+            $params[] = $filtros["prazo_inicio"];
+        } elseif (!empty($filtros["prazo_fim"])) {
+            $sql .= " AND p.prazo <= ?";
+            $params[] = $filtros["prazo_fim"];
+        }
+        
+        // Filtro de acesso por empresa do usuário
+        if (!empty($filtros["usuario_empresa_id"]) && $filtros["usuario_nivel"] !== "admin") {
+            $sql .= " AND p.empresa_id = ?";
+            $params[] = $filtros["usuario_empresa_id"];
+        }
+        
+        // Ordenação
+        $sql .= " ORDER BY p.status, p.prazo";
+        
+        // Paginação
+        $offset = ($pagina - 1) * $porPagina;
+        $sql .= " LIMIT ? OFFSET ?";
+        $params[] = $porPagina;
+        $params[] = $offset;
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll();
+    }
+    
+    /**
+     * Contar total de projetos com filtros
+     * 
+     * @param array $filtros Filtros a aplicar
+     * @return int Total de projetos
+     */
+    public function contar($filtros = []) {
+        $sql = "SELECT COUNT(*) FROM projetos p 
+                LEFT JOIN empresas e ON p.empresa_id = e.id
+                WHERE 1=1";
+        
+        $params = [];
+        
+        // Aplicar filtros
+        if (!empty($filtros["status"])) {
+            $sql .= " AND p.status = ?";
+            $params[] = $filtros["status"];
+        }
+        
+        if (!empty($filtros["empresa_id"])) {
+            $sql .= " AND p.empresa_id = ?";
+            $params[] = $filtros["empresa_id"];
+        }
+        
+        if (!empty($filtros["prazo_inicio"]) && !empty($filtros["prazo_fim"])) {
+            $sql .= " AND p.prazo BETWEEN ? AND ?";
+            $params[] = $filtros["prazo_inicio"];
+            $params[] = $filtros["prazo_fim"];
+        } elseif (!empty($filtros["prazo_inicio"])) {
+            $sql .= " AND p.prazo >= ?";
+            $params[] = $filtros["prazo_inicio"];
+        } elseif (!empty($filtros["prazo_fim"])) {
+            $sql .= " AND p.prazo <= ?";
+            $params[] = $filtros["prazo_fim"];
+        }
+        
+        // Filtro de acesso por empresa do usuário
+        if (!empty($filtros["usuario_empresa_id"]) && $filtros["usuario_nivel"] !== "admin") {
+            $sql .= " AND p.empresa_id = ?";
+            $params[] = $filtros["usuario_empresa_id"];
+        }
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchColumn();
+    }
+    
+    /**
+     * Criar novo projeto
+     * 
+     * @param array $dados Dados do projeto
+     * @return int|false ID do projeto criado ou false em caso de erro
+     */
+    public function criar($dados) {
+        $sql = "INSERT INTO projetos (
+                    fonte, descricao, prazo, status, observacao, usuario_id, empresa_id
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        
+        $stmt = $this->db->prepare($sql);
+        
+        $status = isset($dados["status"]) ? $dados["status"] : "Em Andamento";
+        
+        if ($stmt->execute([
+            $dados["fonte"] ?? null,
+            $dados["descricao"],
+            $dados["prazo"] ?? null,
+            $status,
+            $dados["observacao"] ?? null,
+            $dados["usuario_id"],
+            $dados["empresa_id"] ?? null
+        ])) {
+            return $this->db->lastInsertId();
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Atualizar projeto
+     * 
+     * @param int $id ID do projeto
+     * @param array $dados Dados do projeto
+     * @return bool
+     */
+    public function atualizar($id, $dados) {
+        $campos = [];
+        $valores = [];
+        
+        if (isset($dados["fonte"])) {
+            $campos[] = "fonte = ?";
+            $valores[] = $dados["fonte"];
+        }
+        
+        if (isset($dados["descricao"])) {
+            $campos[] = "descricao = ?";
+            $valores[] = $dados["descricao"];
+        }
+        
+        if (isset($dados["prazo"])) {
+            $campos[] = "prazo = ?";
+            $valores[] = $dados["prazo"];
+        }
+        
+        if (isset($dados["data_conclusao"])) {
+            $campos[] = "data_conclusao = ?";
+            $valores[] = $dados["data_conclusao"];
+        }
+        
+        if (isset($dados["status"])) {
+            $campos[] = "status = ?";
+            $valores[] = $dados["status"];
+        }
+        
+        if (isset($dados["observacao"])) {
+            $campos[] = "observacao = ?";
+            $valores[] = $dados["observacao"];
+        }
+        
+        if (isset($dados["empresa_id"])) {
+            $campos[] = "empresa_id = ?";
+            $valores[] = $dados["empresa_id"];
+        }
+        
+        if (empty($campos)) {
+            return false;
+        }
+        
+        $valores[] = $id;
+        
+        $sql = "UPDATE projetos SET " . implode(", ", $campos) . " WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        
+        return $stmt->execute($valores);
+    }
+    
+    /**
+     * Excluir projeto
+     * 
+     * @param int $id ID do projeto
+     * @return bool
+     */
+    public function excluir($id) {
+        $sql = "DELETE FROM projetos WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+        return $stmt->execute([$id]);
+    }
+    
+    /**
+     * Concluir projeto
+     * 
+     * @param int $id ID do projeto
+     * @param string $dataConclusao Data de conclusão
+     * @return bool
+     */
+    public function concluir($id, $dataConclusao = null) {
+        if ($dataConclusao === null) {
+            $dataConclusao = date("Y-m-d");
+        }
+        
+        return $this->atualizar($id, [
+            "data_conclusao" => $dataConclusao,
+            "status" => "Concluído"
+        ]);
+    }
+    
+    /**
+     * Cancelar projeto
+     * 
+     * @param int $id ID do projeto
+     * @return bool
+     */
+    public function cancelar($id) {
+        return $this->atualizar($id, [
+            "status" => "Cancelado"
+        ]);
+    }
+    
+    /**
+     * Obter estatísticas de projetos
+     * 
+     * @param int|null $empresaId ID da empresa para filtrar estatísticas
+     * @return array Estatísticas
+     */
+    public function obterEstatisticas($empresaId = null) {
+        $stats = [];
+        $params = [];
+        $whereClause = "";
+        
+        if ($empresaId) {
+            $whereClause = " WHERE empresa_id = ?";
+            $params[] = $empresaId;
+        }
+        
+        // Total de projetos
+        $sql = "SELECT COUNT(*) FROM projetos" . $whereClause;
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($params);
+        $stats["total"] = $stmt->fetchColumn();
+        
+        // Projetos em andamento
+        $sql = "SELECT COUNT(*) FROM projetos WHERE status = ?";
+        $paramsAndamento = ["Em Andamento"];
+        if ($empresaId) {
+            $sql .= " AND empresa_id = ?";
+            $paramsAndamento[] = $empresaId;
+        }
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($paramsAndamento);
+        $stats["em_andamento"] = $stmt->fetchColumn();
+        
+        // Projetos concluídos
+        $sql = "SELECT COUNT(*) FROM projetos WHERE status = ?";
+        $paramsConcluidos = ["Concluído"];
+        if ($empresaId) {
+            $sql .= " AND empresa_id = ?";
+            $paramsConcluidos[] = $empresaId;
+        }
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($paramsConcluidos);
+        $stats["concluidos"] = $stmt->fetchColumn();
+        
+        // Projetos cancelados
+        $sql = "SELECT COUNT(*) FROM projetos WHERE status = ?";
+        $paramsCancelados = ["Cancelado"];
+        if ($empresaId) {
+            $sql .= " AND empresa_id = ?";
+            $paramsCancelados[] = $empresaId;
+        }
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute($paramsCancelados);
+        $stats["cancelados"] = $stmt->fetchColumn();
+        
+        return $stats;
+    }
+    
+    /**
+     * Obter todas as empresas que possuem projetos
+     * 
+     * @return array Lista de empresas
+     */
+    public function obterEmpresasComProjetos() {
+        $sql = "SELECT DISTINCT e.id, e.nome
+                FROM projetos p
+                JOIN empresas e ON p.empresa_id = e.id
+                ORDER BY e.nome";
+        
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+}
