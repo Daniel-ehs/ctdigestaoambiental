@@ -426,7 +426,7 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
             title="Baixar Relatório Completo"
           >
             {isExporting ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
-            {isExporting ? '...' : ''}
+            {isExporting ? 'Gerando...' : 'Exportar'}
           </button>
         </div>
       </div>

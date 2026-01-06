@@ -72,13 +72,21 @@ export const api = {
 
     // Waste
     getWaste: () => request<WasteRecord[]>('/waste'),
-    createWaste: (data: Partial<WasteRecord>) => request<WasteRecord>('/waste', {
-        method: 'POST',
-        body: JSON.stringify(data),
-    }),
-    updateWaste: (id: string, data: Partial<WasteRecord>) => request<WasteRecord>(`/waste/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify(data),
-    }),
+    createWaste: (data: Partial<WasteRecord>) => {
+        // Remove pricePerKg (frontend-only) before sending to backend
+        const { pricePerKg, ...rest } = data;
+        return request<WasteRecord>('/waste', {
+            method: 'POST',
+            body: JSON.stringify(rest),
+        });
+    },
+    updateWaste: (id: string, data: Partial<WasteRecord>) => {
+        // Remove pricePerKg (frontend-only) before sending to backend
+        const { pricePerKg, ...rest } = data;
+        return request<WasteRecord>(`/waste/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify(rest),
+        });
+    },
     deleteWaste: (id: string) => request(`/waste/${id}`, { method: 'DELETE' }),
 };
