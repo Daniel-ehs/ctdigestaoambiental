@@ -81,8 +81,8 @@ export const api = {
         });
     },
     updateWaste: (id: string, data: Partial<WasteRecord>) => {
-        // Remove pricePerKg (frontend-only) before sending to backend
-        const { pricePerKg, ...rest } = data;
+        // Remove pricePerKg (frontend-only) and id (backend-generated/immutable) before sending to backend
+        const { pricePerKg, id: _, ...rest } = data;
         return request<WasteRecord>(`/waste/${id}`, {
             method: 'PUT',
             body: JSON.stringify(rest),

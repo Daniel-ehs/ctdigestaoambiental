@@ -4,7 +4,7 @@ import React, { useMemo, useState, useRef, useCallback } from 'react';
 import {
   PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area, ReferenceLine, Sector
 } from 'recharts';
-import { Trash2, Recycle, DollarSign, Sparkles, Leaf, Edit2, Plus, X, Table, Search, Save, Filter, Camera, Download, Loader2 } from 'lucide-react';
+import { Trash2, Recycle, DollarSign, Sparkles, Leaf, Edit2, Plus, X, Table, Search, Save, Filter, Camera, Download, Loader2, AlertTriangle } from 'lucide-react';
 import { WasteRecord, UserRole } from '../types';
 import { MetricCard } from './Metrics';
 import { generateInsights } from '../services/geminiService';
@@ -41,6 +41,10 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
   const [isManageModalOpen, setIsManageModalOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState<Partial<WasteRecord>>({});
+  const [deleteConfirmationId, setDeleteConfirmationId] = useState<string | null>(null);
+
+  // Scroll Ref for Edit Form
+  const formRef = useRef<HTMLDivElement>(null);
 
   // Modal Filter State
   const [modalSearchTerm, setModalSearchTerm] = useState('');
@@ -187,6 +191,12 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
       ...record,
       pricePerKg: record.pricePerKg || (record.weight > 0 ? record.financial / record.weight : 0)
     });
+    // Scroll to form
+    setTimeout(() => {
+      if (formRef.current) {
+        formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
   };
 
   const handleAddNewClick = () => {
@@ -264,8 +274,13 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
   };
 
   const handleDeleteClick = (id: string) => {
-    if (window.confirm('Tem certeza que deseja excluir este registro?')) {
-      onDelete(id);
+    setDeleteConfirmationId(id);
+  };
+
+  const confirmDelete = () => {
+    if (deleteConfirmationId) {
+      onDelete(deleteConfirmationId);
+      setDeleteConfirmationId(null);
     }
   };
 
@@ -639,7 +654,7 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
                 </div>
               )}
               {editingId && (
-                <div className="mb-6 bg-white dark:bg-slate-800 p-6 rounded-xl border border-blue-200 dark:border-slate-600 shadow-sm animate-fade-in-up">
+                <div ref={formRef} className="mb-6 bg-white dark:bg-slate-800 p-6 rounded-xl border border-blue-200 dark:border-slate-600 shadow-sm animate-fade-in-up">
                   <h3 className="text-sm font-bold text-slate-800 dark:text-white uppercase tracking-wider mb-4 border-b border-slate-100 dark:border-slate-700 pb-2">{editingId === 'NEW' ? 'Novo Registro' : 'Editando Registro'}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
                     <div><label className="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">Data</label><input type="date" value={formData.date || ''} onChange={e => setFormData({ ...formData, date: e.target.value })} className="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-ctdi-blue outline-none" /></div>
@@ -672,6 +687,37 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Delete Confirmation Modal */}
+      {deleteConfirmationId && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+          <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700 p-6">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-rose-100 dark:bg-rose-900/30 rounded-full flex items-center justify-center mb-4 text-rose-600 dark:text-rose-500">
+                <AlertTriangle size={32} strokeWidth={2.5} />
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">Confirmar Exclusão</h3>
+              <p className="text-slate-500 dark:text-slate-400 mb-6">
+                Esta ação <span className="font-bold text-rose-600 dark:text-rose-400">não pode ser desfeita</span>.
+                Tem certeza que deseja remover este registro permanentemente?
+              </p>
+              <div className="flex gap-3 w-full">
+                <button
+                  onClick={() => setDeleteConfirmationId(null)}
+                  className="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-bold rounded-xl transition-all"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={confirmDelete}
+                  className="flex-1 py-3 px-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200 dark:shadow-none transition-all"
+                >
+                  Sim, Excluir
+                </button>
               </div>
             </div>
           </div>
