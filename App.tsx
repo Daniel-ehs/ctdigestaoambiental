@@ -317,12 +317,10 @@ const App: React.FC = () => {
   };
 
   const handleDeleteWaste = async (id: string) => {
-    if (confirm("Deseja excluir?")) {
-      try {
-        await api.deleteWaste(id);
-        await fetchData();
-      } catch (e) { alert("Erro ao deletar registro."); }
-    }
+    try {
+      await api.deleteWaste(id);
+      await fetchData();
+    } catch (e) { alert("Erro ao deletar registro."); }
   };
 
 
