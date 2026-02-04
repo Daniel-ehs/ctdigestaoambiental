@@ -181,8 +181,27 @@ app.put('/api/waste/:id', async (req, res) => {
 app.delete('/api/waste/:id', async (req, res) => {
     try {
         await prisma.wasteRecord.delete({ where: { id: req.params.id } });
-        res.json({ success: true });
     } catch (e) { res.status(500).json({ error: e }); }
+});
+
+app.post('/api/waste/bulk', async (req, res) => {
+    try {
+        const records = req.body; // Expects array
+        if (!Array.isArray(records)) {
+            return res.status(400).json({ error: "Expected array of records" });
+        }
+
+        // Use createMany if supported (Postgres supports it)
+        const result = await prisma.wasteRecord.createMany({
+            data: records,
+            skipDuplicates: true // Optional: skip if ID conflicts, though we usually generate new IDs or omit them
+        });
+
+        res.json({ count: result.count });
+    } catch (e) {
+        console.error("Bulk insert error:", e);
+        res.status(500).json({ error: "Failed to bulk insert waste records" });
+    }
 });
 
 // --- AI Insights ---

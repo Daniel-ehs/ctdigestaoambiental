@@ -4,11 +4,13 @@ import React, { useMemo, useState, useRef, useCallback } from 'react';
 import {
   PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area, ReferenceLine, Sector
 } from 'recharts';
-import { Trash2, Recycle, DollarSign, Sparkles, Leaf, Edit2, Plus, X, Table, Search, Save, Filter, Camera, Download, Loader2, AlertTriangle } from 'lucide-react';
+import { Trash2, Recycle, DollarSign, Sparkles, Leaf, Edit2, Plus, X, Table, Search, Save, Filter, Camera, Download, Loader2, AlertTriangle, Upload } from 'lucide-react';
 import { WasteRecord, UserRole } from '../types';
 import { MetricCard } from './Metrics';
 import { generateInsights } from '../services/geminiService';
 import html2canvas from 'html2canvas';
+import * as XLSX from 'xlsx';
+import { api } from '../services/api';
 
 interface Props {
   data: WasteRecord[];
@@ -27,6 +29,8 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
   const [insights, setInsights] = useState<string | null>(null);
   const [loadingInsights, setLoadingInsights] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  const [isImporting, setIsImporting] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Pie Chart Active State
   const [activeIndex, setActiveIndex] = useState(0);
@@ -182,6 +186,95 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
         setIsExporting(false);
       }
     }
+  };
+
+  const handleExportExcel = () => {
+    // Format data for Excel
+    const excelData = filteredData.map(record => ({
+      Data: new Date(record.date).toLocaleDateString('pt-BR'),
+      Tipo: record.type,
+      Categoria: record.category,
+      'Peso (kg)': record.weight,
+      'Preço Unit. (R$/kg)': record.pricePerKg,
+      'Total (R$)': record.financial
+    }));
+
+    const ws = XLSX.utils.json_to_sheet(excelData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Resíduos");
+    XLSX.writeFile(wb, `Residuos_${selectedYear}.xlsx`);
+  };
+
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsImporting(true);
+    const reader = new FileReader();
+
+    reader.onload = async (evt) => {
+      try {
+        const bstr = evt.target?.result;
+        const wb = XLSX.read(bstr, { type: 'binary' });
+        const wsname = wb.SheetNames[0];
+        const ws = wb.Sheets[wsname];
+        const data = XLSX.utils.sheet_to_json(ws) as any[];
+
+        // Map Excel columns back to App logic
+        const formattedData: WasteRecord[] = data.map((row: any) => {
+          // Basic mapping logic - adjust based on expected Excel format
+          // Expecting: Data, Tipo, Categoria, Peso (kg), Preço Unit. (R$/kg), Total (R$)
+          // OR standard keys if they use the template.
+          // Let's try to parse standardized Date
+          let dateStr = row['Data'] || row['date'];
+          if (typeof dateStr === 'number') {
+            // Excel date serial
+            dateStr = new Date(Math.round((dateStr - 25569) * 86400 * 1000)).toISOString().split('T')[0];
+          } else if (dateStr && dateStr.includes('/')) {
+            const parts = dateStr.split('/');
+            // pt-BR: DD/MM/YYYY -> YYYY-MM-DD
+            if (parts.length === 3) dateStr = `${parts[2]}-${parts[1]}-${parts[0]}`;
+          }
+
+          return {
+            id: crypto.randomUUID(), // Temp ID
+            date: dateStr || new Date().toISOString().split('T')[0],
+            type: row['Tipo'] || row['type'] || 'Outros',
+            category: (row['Categoria'] || row['category']) === 'Não Reciclável' ? 'Não Reciclável' : 'Reciclável',
+            weight: Number(row['Peso (kg)'] || row['weight']) || 0,
+            financial: Number(row['Total (R$)'] || row['financial']) || 0,
+            pricePerKg: Number(row['Preço Unit. (R$/kg)'] || row['pricePerKg']) || 0
+          };
+        });
+
+        if (formattedData.length > 0) {
+          if (confirm(`Encontrados ${formattedData.length} registros. Deseja importar?`)) {
+            await api.createWasteBulk(formattedData);
+            // Refresh parent
+            // Ideally we should call a refresh function passed via props, but checking App structure 'onAdd' adds one.
+            // We'll need to trigger a full refresh. 
+            // Since 'onAdd' is single, we might need a hack or reload.
+            // For now, let's call onAdd for the last one just to trigger something or alert user to refresh.
+            // BETTER: The user refreshes manually or we reload.
+            alert('Importação concluída com sucesso! Atualize a página para ver os dados.');
+          }
+        } else {
+          alert('Nenhum dado válido encontrado na planilha.');
+        }
+
+      } catch (error) {
+        console.error("Import error:", error);
+        alert("Erro ao processar arquivo Excel.");
+      } finally {
+        setIsImporting(false);
+        if (fileInputRef.current) fileInputRef.current.value = '';
+      }
+    };
+    reader.readAsBinaryString(file);
   };
 
   // Effect to scroll to form when editingId changes
@@ -446,6 +539,37 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
               {isExporting ? 'Gerando...' : 'Exportar'}
             </button>
           </div>
+
+          {/* Hidden Import Input */}
+          <input
+            type="file"
+            accept=".xlsx, .xls"
+            ref={fileInputRef}
+            onChange={handleFileUpload}
+            className="hidden"
+          />
+
+          {userRole === 'manager' && (
+            <div className="flex gap-2">
+              <button
+                onClick={handleImportClick}
+                disabled={isImporting}
+                className="no-export flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl shadow-lg hover:bg-emerald-700 transition-all font-medium text-sm"
+                title="Importar Excel"
+              >
+                <Upload size={16} />
+                {isImporting ? '...' : 'Importar'}
+              </button>
+              <button
+                onClick={handleExportExcel}
+                className="no-export flex items-center gap-2 px-5 py-2.5 bg-green-700 text-white rounded-xl shadow-lg hover:bg-green-800 transition-all font-medium text-sm"
+                title="Exportar para Excel"
+              >
+                <Table size={16} />
+                Excel
+              </button>
+            </div>
+          )}
         </div>
 
         {insights && (
@@ -695,39 +819,41 @@ const WasteDashboard: React.FC<Props> = ({ data, goal, onUpdate, onAdd, onDelete
           </div>
         )}
 
-      </div>
+      </div >
 
       {/* Delete Confirmation Modal */}
-      {deleteConfirmationId && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700 p-6">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-rose-100 dark:bg-rose-900/30 rounded-full flex items-center justify-center mb-4 text-rose-600 dark:text-rose-500">
-                <AlertTriangle size={32} strokeWidth={2.5} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">Confirmar Exclusão</h3>
-              <p className="text-slate-500 dark:text-slate-400 mb-6">
-                Esta ação <span className="font-bold text-rose-600 dark:text-rose-400">não pode ser desfeita</span>.
-                Tem certeza que deseja remover este registro permanentemente?
-              </p>
-              <div className="flex gap-3 w-full">
-                <button
-                  onClick={() => setDeleteConfirmationId(null)}
-                  className="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-bold rounded-xl transition-all"
-                >
-                  Cancelar
-                </button>
-                <button
-                  onClick={confirmDelete}
-                  className="flex-1 py-3 px-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200 dark:shadow-none transition-all"
-                >
-                  Sim, Excluir
-                </button>
+      {
+        deleteConfirmationId && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-fade-in">
+            <div className="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-700 p-6">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-rose-100 dark:bg-rose-900/30 rounded-full flex items-center justify-center mb-4 text-rose-600 dark:text-rose-500">
+                  <AlertTriangle size={32} strokeWidth={2.5} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">Confirmar Exclusão</h3>
+                <p className="text-slate-500 dark:text-slate-400 mb-6">
+                  Esta ação <span className="font-bold text-rose-600 dark:text-rose-400">não pode ser desfeita</span>.
+                  Tem certeza que deseja remover este registro permanentemente?
+                </p>
+                <div className="flex gap-3 w-full">
+                  <button
+                    onClick={() => setDeleteConfirmationId(null)}
+                    className="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-300 font-bold rounded-xl transition-all"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    onClick={confirmDelete}
+                    className="flex-1 py-3 px-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl shadow-lg shadow-rose-200 dark:shadow-none transition-all"
+                  >
+                    Sim, Excluir
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </>
   );
 };

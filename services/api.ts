@@ -89,4 +89,8 @@ export const api = {
         });
     },
     deleteWaste: (id: string) => request(`/waste/${id}`, { method: 'DELETE' }),
+    createWasteBulk: (data: Partial<WasteRecord>[]) => request<number>('/waste/bulk', {
+        method: 'POST',
+        body: JSON.stringify(data.map(({ pricePerKg, id, ...rest }) => rest)),
+    }),
 };
