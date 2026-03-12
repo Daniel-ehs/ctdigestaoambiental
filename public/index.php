@@ -35,22 +35,16 @@ $routes = [
     "404" => "404.php"
 ];
 
-// Adiciona log para depuração
-error_log("DEBUG: Rota detectada: " . $route);
-error_log("DEBUG: DOCUMENT_ROOT: " . $_SERVER["DOCUMENT_ROOT"]);
 
 // Inclui o arquivo correspondente à rota
 if (array_key_exists($route, $routes)) {
     $file_to_include = __DIR__ . "/" . $routes[$route];
-    error_log("DEBUG: Tentando incluir arquivo: " . $file_to_include);
     if (file_exists($file_to_include)) {
         require_once $file_to_include;
     } else {
-        error_log("DEBUG: ERRO - Arquivo não encontrado: " . $file_to_include);
         require_once __DIR__ . "/404.php";
     }
 } else {
     // Se a rota não for encontrada, redireciona para 404
-    error_log("DEBUG: Rota não mapeada: " . $route);
     require_once __DIR__ . "/404.php";
 }

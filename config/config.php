@@ -4,16 +4,6 @@
  * Sistema de Gerenciamento de Funcionários
  */
 
-// --- INÍCIO DA DEPURAÇÃO ---
-error_log("DEBUG: AuthController.php sendo carregado.");
-$configPath = __DIR__ . '/../config/config.php';
-error_log("DEBUG: Tentando incluir config.php de: " . $configPath);
-if (file_exists($configPath)) {
-    error_log("DEBUG: config.php existe no caminho: " . $configPath);
-} else {
-    error_log("DEBUG: ERRO - config.php NÃO encontrado no caminho: " . $configPath);
-}
-// --- FIM DA DEPURAÇÃO ---
 
 // Configurações de sessão
 ini_set('session.cookie_httponly', 1);
