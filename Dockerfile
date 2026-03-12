@@ -10,7 +10,8 @@ RUN a2enmod rewrite
 COPY . /var/www/html/
 
 # Set permissions for uploads and logs
-RUN chown -R www-data:www-data /var/www/html/uploads /var/www/html/logs && \
+RUN mkdir -p /var/www/html/uploads /var/www/html/logs && \
+    chown -R www-data:www-data /var/www/html/uploads /var/www/html/logs && \
     chmod -R 755 /var/www/html/uploads /var/www/html/logs
 
 # Set the working directory
