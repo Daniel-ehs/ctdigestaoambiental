@@ -1,11 +1,10 @@
 -- Sistema de Gerenciamento de Funcionários
--- Script de criação do banco de dados
--- Compatível com MySQL 5.7+
+-- Script de criação do banco de dados (Versão Simplificada para Adminer/MariaDB)
 
-CREATE DATABASE IF NOT EXISTS sistema_funcionarios CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE sistema_funcionarios;
+-- OBSERVAÇÃO: Crie e selecione o banco de dados manualmente no Adminer antes de rodar este script.
+-- Se o banco já existir, este script apenas garantirá que as tabelas necessárias estejam lá.
 
--- Tabela de empresas
+-- 1. TABELAS (Básicas)
 CREATE TABLE IF NOT EXISTS empresas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     razao_social VARCHAR(255) NOT NULL,
@@ -14,9 +13,8 @@ CREATE TABLE IF NOT EXISTS empresas (
     status ENUM('ativo', 'inativo') DEFAULT 'ativo',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
--- Tabela de postos de trabalho/filiais
 CREATE TABLE IF NOT EXISTS postos_trabalho (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -26,9 +24,8 @@ CREATE TABLE IF NOT EXISTS postos_trabalho (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (empresa_id) REFERENCES empresas(id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
--- Tabela de usuários do sistema
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -38,9 +35,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
     status ENUM('ativo', 'inativo') DEFAULT 'ativo',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
--- Tabela de permissões de usuários por empresa
 CREATE TABLE IF NOT EXISTS usuario_empresas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -49,9 +45,8 @@ CREATE TABLE IF NOT EXISTS usuario_empresas (
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
     FOREIGN KEY (empresa_id) REFERENCES empresas(id) ON DELETE CASCADE,
     UNIQUE KEY unique_usuario_empresa (usuario_id, empresa_id)
-);
+) ENGINE=InnoDB;
 
--- Tabela de treinamentos
 CREATE TABLE IF NOT EXISTS treinamentos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -61,9 +56,8 @@ CREATE TABLE IF NOT EXISTS treinamentos (
     status ENUM('ativo', 'inativo') DEFAULT 'ativo',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
--- Tabela de funcionários
 CREATE TABLE IF NOT EXISTS funcionarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -75,9 +69,8 @@ CREATE TABLE IF NOT EXISTS funcionarios (
     status ENUM('ativo', 'inativo') DEFAULT 'ativo',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
--- Tabela de relacionamento funcionário x treinamentos
 CREATE TABLE IF NOT EXISTS funcionario_treinamentos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     funcionario_id INT NOT NULL,
@@ -90,9 +83,8 @@ CREATE TABLE IF NOT EXISTS funcionario_treinamentos (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE,
     FOREIGN KEY (treinamento_id) REFERENCES treinamentos(id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
--- Tabela de relacionamento funcionário x postos de trabalho
 CREATE TABLE IF NOT EXISTS funcionario_postos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     funcionario_id INT NOT NULL,
@@ -104,9 +96,8 @@ CREATE TABLE IF NOT EXISTS funcionario_postos (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (funcionario_id) REFERENCES funcionarios(id) ON DELETE CASCADE,
     FOREIGN KEY (posto_id) REFERENCES postos_trabalho(id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
--- Tabela de auditoria
 CREATE TABLE IF NOT EXISTS auditoria (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -119,9 +110,8 @@ CREATE TABLE IF NOT EXISTS auditoria (
     user_agent TEXT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
-);
+) ENGINE=InnoDB;
 
--- Tabela de configurações do sistema
 CREATE TABLE IF NOT EXISTS configuracoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     chave VARCHAR(100) NOT NULL UNIQUE,
@@ -129,26 +119,20 @@ CREATE TABLE IF NOT EXISTS configuracoes (
     descricao TEXT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+) ENGINE=InnoDB;
 
--- Inserir dados iniciais (usando INSERT IGNORE para evitar duplicatas)
+-- 2. DADOS INICIAIS (INSERT IGNORE)
+INSERT IGNORE INTO usuarios (id, nome, email, senha, hierarquia) VALUES 
+(1, 'Administrador', 'admin@sistema.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'gerente');
 
--- Usuário administrador padrão (senha: admin123)
-INSERT IGNORE INTO usuarios (nome, email, senha, hierarquia) VALUES 
-('Administrador', 'admin@sistema.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'gerente');
-
--- Empresa exemplo
 INSERT IGNORE INTO empresas (id, razao_social, cnpj, endereco) VALUES 
 (1, 'Empresa Exemplo Ltda', '12.345.678/0001-90', 'Rua Exemplo, 123 - Centro - São Paulo/SP');
 
--- Posto de trabalho exemplo
 INSERT IGNORE INTO postos_trabalho (id, nome, endereco, empresa_id) VALUES 
 (1, 'Matriz', 'Rua Exemplo, 123 - Centro - São Paulo/SP', 1);
 
--- Vincular usuário à empresa
 INSERT IGNORE INTO usuario_empresas (usuario_id, empresa_id) VALUES (1, 1);
 
--- Treinamentos padrão
 INSERT IGNORE INTO treinamentos (nome, carga_horaria, prazo_validade, descricao) VALUES 
 ('NR-10 - Segurança em Instalações e Serviços em Eletricidade', 40, 24, 'Treinamento obrigatório para trabalhos com eletricidade'),
 ('NR-35 - Trabalho em Altura', 8, 24, 'Treinamento para trabalhos em altura superior a 2 metros'),
@@ -156,7 +140,6 @@ INSERT IGNORE INTO treinamentos (nome, carga_horaria, prazo_validade, descricao)
 ('Primeiros Socorros', 8, 24, 'Treinamento básico de primeiros socorros'),
 ('Combate a Incêndio', 4, 12, 'Treinamento de prevenção e combate a incêndios');
 
--- Configurações padrão
 INSERT IGNORE INTO configuracoes (chave, valor, descricao) VALUES 
 ('sistema_nome', 'Sistema de Gerenciamento de Funcionários', 'Nome do sistema'),
 ('empresa_nome', 'Sua Empresa', 'Nome da empresa proprietária do sistema'),
@@ -164,22 +147,11 @@ INSERT IGNORE INTO configuracoes (chave, valor, descricao) VALUES
 ('dias_alerta_aso', '30', 'Dias de antecedência para alerta de vencimento do ASO'),
 ('dias_alerta_treinamento', '30', 'Dias de antecedência para alerta de vencimento de treinamentos');
 
--- Índices (Se falhar porque já existe, ignoramos - MySQL 5.7 não tem CREATE INDEX IF NOT EXISTS)
--- No CapRover/Docker, se o banco for novo, isso rodará 100%. Se já existirem, os erros não param o script dependendo do executor.
--- Para garantir, vamos tentar dropar se existir via procedimento se necessário, mas geralmente CREATE TABLE IF NOT EXISTS já ajuda.
-
--- Views para facilitar consultas
+-- 3. VIEWS (Se o Adminer der erro aqui, rode separadamente)
 DROP VIEW IF EXISTS vw_funcionarios_status;
 CREATE VIEW vw_funcionarios_status AS
 SELECT 
-    f.id,
-    f.nome,
-    f.cpf,
-    f.matricula,
-    f.foto,
-    f.aso_data,
-    f.aso_validade,
-    f.status,
+    f.id, f.nome, f.cpf, f.matricula, f.foto, f.aso_data, f.aso_validade, f.status,
     CASE 
         WHEN f.aso_validade < CURDATE() THEN 'vencido'
         WHEN f.aso_validade <= DATE_ADD(CURDATE(), INTERVAL 15 DAY) THEN 'vence_15_dias'
@@ -208,50 +180,10 @@ SELECT
     (SELECT COUNT(*) FROM empresas WHERE status = 'ativo') as total_empresas,
     (SELECT COUNT(*) FROM postos_trabalho WHERE status = 'ativo') as total_postos;
 
--- Triggers para auditoria automática
-DROP TRIGGER IF EXISTS tr_funcionarios_audit_insert;
-DELIMITER $$
-CREATE TRIGGER tr_funcionarios_audit_insert
-AFTER INSERT ON funcionarios
-FOR EACH ROW
-BEGIN
-    INSERT INTO auditoria (usuario_id, tabela, registro_id, acao, dados_novos, ip_address)
-    VALUES (IFNULL(@current_user_id, 1), 'funcionarios', NEW.id, 'create', 
-            JSON_OBJECT('nome', NEW.nome, 'cpf', NEW.cpf, 'matricula', NEW.matricula, 'status', NEW.status),
-            IFNULL(@current_user_ip, '127.0.0.1'));
-END$$
-DELIMITER ;
+-- 4. PROCEDURES E TRIGGERS (O Adminer geralmente exige rodar um por um se houver erro de delimitador)
+-- Tente rodar os blocos abaixo individualmente se o script falhar aqui.
 
-DROP TRIGGER IF EXISTS tr_funcionarios_audit_update;
-DELIMITER $$
-CREATE TRIGGER tr_funcionarios_audit_update
-AFTER UPDATE ON funcionarios
-FOR EACH ROW
-BEGIN
-    INSERT INTO auditoria (usuario_id, tabela, registro_id, acao, dados_anteriores, dados_novos, ip_address)
-    VALUES (IFNULL(@current_user_id, 1), 'funcionarios', NEW.id, 'update',
-            JSON_OBJECT('nome', OLD.nome, 'cpf', OLD.cpf, 'matricula', OLD.matricula, 'status', OLD.status),
-            JSON_OBJECT('nome', NEW.nome, 'cpf', NEW.cpf, 'matricula', NEW.matricula, 'status', NEW.status),
-            IFNULL(@current_user_ip, '127.0.0.1'));
-END$$
-DELIMITER ;
-
-DROP TRIGGER IF EXISTS tr_funcionarios_audit_delete;
-DELIMITER $$
-CREATE TRIGGER tr_funcionarios_audit_delete
-BEFORE DELETE ON funcionarios
-FOR EACH ROW
-BEGIN
-    INSERT INTO auditoria (usuario_id, tabela, registro_id, acao, dados_anteriores, ip_address)
-    VALUES (IFNULL(@current_user_id, 1), 'funcionarios', OLD.id, 'delete',
-            JSON_OBJECT('nome', OLD.nome, 'cpf', OLD.cpf, 'matricula', OLD.matricula, 'status', OLD.status),
-            IFNULL(@current_user_ip, '127.0.0.1'));
-END$$
-DELIMITER ;
-
--- Procedure para atualizar status de treinamentos
 DROP PROCEDURE IF EXISTS sp_atualizar_status_treinamentos;
-DELIMITER $$
 CREATE PROCEDURE sp_atualizar_status_treinamentos()
 BEGIN
     UPDATE funcionario_treinamentos 
@@ -260,16 +192,6 @@ BEGIN
         WHEN data_validade <= DATE_ADD(CURDATE(), INTERVAL 30 DAY) THEN 'a_vencer'
         ELSE 'valido'
     END;
-END$$
-DELIMITER ;
+END;
 
--- Event para executar a procedure diariamente
-DROP EVENT IF EXISTS ev_atualizar_status_treinamentos;
-CREATE EVENT ev_atualizar_status_treinamentos
-ON SCHEDULE EVERY 1 DAY
-STARTS CURRENT_TIMESTAMP
-DO
-CALL sp_atualizar_status_treinamentos();
-
--- Ativar o event scheduler
-SET GLOBAL event_scheduler = ON;
+-- FIM DO SCRIPT BÁSICO
