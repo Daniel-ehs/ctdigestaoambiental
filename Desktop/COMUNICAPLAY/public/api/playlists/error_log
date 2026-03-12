@@ -1,0 +1,859 @@
+[03-Aug-2025 02:58:00 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 129
+[03-Aug-2025 03:03:34 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 129
+[03-Aug-2025 03:51:54 America/Fortaleza] Erro ao buscar mídias da playlist: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'm.caminho' in 'field list'
+[03-Aug-2025 04:09:04 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 04:09:04 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 130
+[03-Aug-2025 04:09:04 America/Fortaleza] Mídias normalizadas: []
+[03-Aug-2025 04:09:31 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 04:09:31 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 130
+[03-Aug-2025 04:09:31 America/Fortaleza] Mídias normalizadas: []
+[03-Aug-2025 04:30:15 America/Fortaleza] Nenhuma mídia encontrada na tabela playlist_midias para playlist 9
+[03-Aug-2025 04:31:08 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 04:31:08 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 130
+[03-Aug-2025 04:31:08 America/Fortaleza] Mídias normalizadas: []
+[03-Aug-2025 04:31:19 America/Fortaleza] Nenhuma mídia encontrada na tabela playlist_midias para playlist 11
+[03-Aug-2025 04:35:58 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 04:35:58 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 130
+[03-Aug-2025 04:35:58 America/Fortaleza] Mídias normalizadas: []
+[03-Aug-2025 04:36:09 America/Fortaleza] Nenhuma mídia encontrada na tabela playlist_midias para playlist 12
+[03-Aug-2025 04:39:24 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined method Playlist::clone() in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php:43
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php on line 43
+[03-Aug-2025 04:39:28 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined method Playlist::clone() in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php:43
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php on line 43
+[03-Aug-2025 04:52:24 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 04:52:24 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 130
+[03-Aug-2025 04:52:24 America/Fortaleza] Mídias normalizadas: []
+[03-Aug-2025 05:12:05 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 05:12:05 America/Fortaleza] Parâmetros: nome=dwsdfsaa, telaId=2, dataInicio=2025-08-03 05:11:00, dataFim=2025-08-03 09:11:00
+[03-Aug-2025 05:12:05 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 05:12:05 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 05:12:05 America/Fortaleza] Playlist criada com ID: 15
+[03-Aug-2025 05:12:05 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('dwsdfsaa', '2', '2025-08-03 05:1...', '2025-08-03 09:1...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 05:12:09 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 05:12:09 America/Fortaleza] Parâmetros: nome=dwsdfsaa, telaId=2, dataInicio=2025-08-03 05:11:00, dataFim=2025-08-03 09:11:00
+[03-Aug-2025 05:12:09 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 05:12:09 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 05:12:09 America/Fortaleza] Playlist criada com ID: 16
+[03-Aug-2025 05:12:09 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('dwsdfsaa', '2', '2025-08-03 05:1...', '2025-08-03 09:1...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 19:03:06 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 19:03:06 America/Fortaleza] Parâmetros: nome=Cielo ss, telaId=2, dataInicio=2025-08-03 19:02:00, dataFim=2025-08-03 23:02:00
+[03-Aug-2025 19:03:06 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 19:03:06 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 19:03:06 America/Fortaleza] Playlist criada com ID: 17
+[03-Aug-2025 19:03:06 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('Cielo ss', '2', '2025-08-03 19:0...', '2025-08-03 23:0...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 19:05:28 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 19:05:28 America/Fortaleza] Parâmetros: nome=Cielo ss, telaId=2, dataInicio=2025-08-03 19:02:00, dataFim=2025-08-03 23:02:00
+[03-Aug-2025 19:05:28 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 19:05:28 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 19:05:28 America/Fortaleza] Playlist criada com ID: 18
+[03-Aug-2025 19:05:28 America/Fortaleza] Playlist criada com ID: 18
+[03-Aug-2025 19:05:28 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('Cielo ss', '2', '2025-08-03 19:0...', '2025-08-03 23:0...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 19:06:04 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 19:06:04 America/Fortaleza] Parâmetros: nome=Teste, telaId=2, dataInicio=2025-08-03 19:05:00, dataFim=2025-08-03 23:05:00
+[03-Aug-2025 19:06:04 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 19:06:04 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 19:06:04 America/Fortaleza] Playlist criada com ID: 19
+[03-Aug-2025 19:06:04 America/Fortaleza] Playlist criada com ID: 19
+[03-Aug-2025 19:06:04 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('Teste', '2', '2025-08-03 19:0...', '2025-08-03 23:0...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 19:15:33 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 19:15:33 America/Fortaleza] Parâmetros: nome=Teste, telaId=1, dataInicio=2025-08-03 19:15:00, dataFim=2025-08-03 23:15:00
+[03-Aug-2025 19:15:33 America/Fortaleza] Mídias recebidas: "[1,2]"
+[03-Aug-2025 19:15:33 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 19:15:33 America/Fortaleza] Playlist criada com ID: 20
+[03-Aug-2025 19:15:33 America/Fortaleza] Playlist criada com ID: 20
+[03-Aug-2025 19:15:33 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php:62
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/create.php(65): PlaylistController->create('Teste', '1', '2025-08-03 19:1...', '2025-08-03 23:1...', '[1,2]')
+#1 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/controllers/PlaylistController.php on line 62
+[03-Aug-2025 19:31:21 America/Fortaleza] PlaylistController->create() chamado
+[03-Aug-2025 19:31:21 America/Fortaleza] Parâmetros: nome=testando 2, telaId=2, dataInicio=2025-08-03 19:31:00, dataFim=2025-08-03 23:31:00
+[03-Aug-2025 19:31:21 America/Fortaleza] Mídias recebidas: [1,2]
+[03-Aug-2025 19:31:21 America/Fortaleza] Criando playlist no banco...
+[03-Aug-2025 19:31:21 America/Fortaleza] Playlist criada com ID: 22
+[03-Aug-2025 19:31:21 America/Fortaleza] Playlist criada com ID: 22
+[03-Aug-2025 19:31:21 America/Fortaleza] Processando 2 mídias...
+[03-Aug-2025 19:31:21 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[03-Aug-2025 19:31:21 America/Fortaleza] addMidia() chamado: playlist=22, midia=1, ordem=1, tempo=30
+[03-Aug-2025 19:31:21 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 22
+[03-Aug-2025 19:31:21 America/Fortaleza] Mídia 1 adicionada com sucesso
+[03-Aug-2025 19:31:21 America/Fortaleza] Adicionando mídia ID: 2, ordem: 2
+[03-Aug-2025 19:31:21 America/Fortaleza] addMidia() chamado: playlist=22, midia=2, ordem=2, tempo=30
+[03-Aug-2025 19:31:21 America/Fortaleza] ✅ Mídia 2 adicionada com sucesso à playlist 22
+[03-Aug-2025 19:31:21 America/Fortaleza] Mídia 2 adicionada com sucesso
+[03-Aug-2025 19:31:21 America/Fortaleza] Total de mídias salvas: 2
+[03-Aug-2025 19:31:35 America/Fortaleza] Mídias carregadas para playlist 22: 2
+[03-Aug-2025 19:51:31 America/Fortaleza] Mídias carregadas para playlist 22: 2
+[04-Aug-2025 00:24:18 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 00:24:18 America/Fortaleza] Parâmetros: nome=Geral, telaId=3, dataInicio=2025-08-04 00:23:00, dataFim=2025-08-04 04:23:00
+[04-Aug-2025 00:24:18 America/Fortaleza] Mídias recebidas: [4,3,5,2]
+[04-Aug-2025 00:24:18 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 00:24:18 America/Fortaleza] Playlist criada com ID: 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Playlist criada com ID: 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Processando 4 mídias...
+[04-Aug-2025 00:24:18 America/Fortaleza] Adicionando mídia ID: 4, ordem: 1
+[04-Aug-2025 00:24:18 America/Fortaleza] addMidia() chamado: playlist=23, midia=4, ordem=1, tempo=30
+[04-Aug-2025 00:24:18 America/Fortaleza] ✅ Mídia 4 adicionada com sucesso à playlist 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Mídia 4 adicionada com sucesso
+[04-Aug-2025 00:24:18 America/Fortaleza] Adicionando mídia ID: 3, ordem: 2
+[04-Aug-2025 00:24:18 America/Fortaleza] addMidia() chamado: playlist=23, midia=3, ordem=2, tempo=30
+[04-Aug-2025 00:24:18 America/Fortaleza] ✅ Mídia 3 adicionada com sucesso à playlist 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Mídia 3 adicionada com sucesso
+[04-Aug-2025 00:24:18 America/Fortaleza] Adicionando mídia ID: 5, ordem: 3
+[04-Aug-2025 00:24:18 America/Fortaleza] addMidia() chamado: playlist=23, midia=5, ordem=3, tempo=30
+[04-Aug-2025 00:24:18 America/Fortaleza] ✅ Mídia 5 adicionada com sucesso à playlist 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Mídia 5 adicionada com sucesso
+[04-Aug-2025 00:24:18 America/Fortaleza] Adicionando mídia ID: 2, ordem: 4
+[04-Aug-2025 00:24:18 America/Fortaleza] addMidia() chamado: playlist=23, midia=2, ordem=4, tempo=30
+[04-Aug-2025 00:24:18 America/Fortaleza] ✅ Mídia 2 adicionada com sucesso à playlist 23
+[04-Aug-2025 00:24:18 America/Fortaleza] Mídia 2 adicionada com sucesso
+[04-Aug-2025 00:24:18 America/Fortaleza] Total de mídias salvas: 4
+[04-Aug-2025 09:04:15 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 09:04:15 America/Fortaleza] Parâmetros: nome=Teste, telaId=4, dataInicio=2025-08-04 09:03:00, dataFim=2025-08-14 13:03:00
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídias recebidas: [1,4,3,5,2,6]
+[04-Aug-2025 09:04:15 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 09:04:15 America/Fortaleza] Playlist criada com ID: 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Playlist criada com ID: 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Processando 6 mídias...
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=1, ordem=1, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 1 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 4, ordem: 2
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=4, ordem=2, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 4 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 4 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 3, ordem: 3
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=3, ordem=3, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 3 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 3 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 5, ordem: 4
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=5, ordem=4, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 5 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 5 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 2, ordem: 5
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=2, ordem=5, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 2 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 2 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Adicionando mídia ID: 6, ordem: 6
+[04-Aug-2025 09:04:15 America/Fortaleza] addMidia() chamado: playlist=24, midia=6, ordem=6, tempo=30
+[04-Aug-2025 09:04:15 America/Fortaleza] ✅ Mídia 6 adicionada com sucesso à playlist 24
+[04-Aug-2025 09:04:15 America/Fortaleza] Mídia 6 adicionada com sucesso
+[04-Aug-2025 09:04:15 America/Fortaleza] Total de mídias salvas: 6
+[04-Aug-2025 09:20:36 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 09:20:36 America/Fortaleza] Parâmetros: nome=Midias Cielo, telaId=5, dataInicio=2025-08-04 09:20:00, dataFim=2030-12-31 00:00:00
+[04-Aug-2025 09:20:36 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 09:20:36 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 09:20:36 America/Fortaleza] Playlist criada com ID: 25
+[04-Aug-2025 09:20:36 America/Fortaleza] Playlist criada com ID: 25
+[04-Aug-2025 09:20:36 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 09:20:36 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 09:20:36 America/Fortaleza] addMidia() chamado: playlist=25, midia=7, ordem=1, tempo=30
+[04-Aug-2025 09:20:36 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 25
+[04-Aug-2025 09:20:36 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 09:20:36 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 10:48:35 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 10:48:35 America/Fortaleza] Parâmetros: nome=Teste, telaId=6, dataInicio=2025-08-04 10:48:00, dataFim=2025-08-04 14:48:00
+[04-Aug-2025 10:48:35 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 10:48:35 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 10:48:35 America/Fortaleza] Playlist criada com ID: 26
+[04-Aug-2025 10:48:35 America/Fortaleza] Playlist criada com ID: 26
+[04-Aug-2025 10:48:35 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 10:48:35 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 10:48:35 America/Fortaleza] addMidia() chamado: playlist=26, midia=7, ordem=1, tempo=30
+[04-Aug-2025 10:48:35 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 26
+[04-Aug-2025 10:48:35 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 10:48:35 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 17:07:06 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 17:07:06 America/Fortaleza] Parâmetros: nome=teseeett, telaId=6, dataInicio=2025-08-04 17:06:00, dataFim=2025-08-04 21:06:00
+[04-Aug-2025 17:07:06 America/Fortaleza] Mídias recebidas: [1]
+[04-Aug-2025 17:07:06 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 17:07:06 America/Fortaleza] Playlist criada com ID: 29
+[04-Aug-2025 17:07:06 America/Fortaleza] Playlist criada com ID: 29
+[04-Aug-2025 17:07:06 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 17:07:06 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[04-Aug-2025 17:07:06 America/Fortaleza] addMidia() chamado: playlist=29, midia=1, ordem=1, tempo=30
+[04-Aug-2025 17:07:06 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 29
+[04-Aug-2025 17:07:06 America/Fortaleza] Mídia 1 adicionada com sucesso
+[04-Aug-2025 17:07:06 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 17:17:57 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 17:17:57 America/Fortaleza] Parâmetros: nome=Teste EHS, telaId=7, dataInicio=2025-08-04 17:17:00, dataFim=2025-08-04 21:17:00
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídias recebidas: [1,4,3,5,2,6]
+[04-Aug-2025 17:17:57 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 17:17:57 America/Fortaleza] Playlist criada com ID: 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Playlist criada com ID: 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Processando 6 mídias...
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=1, ordem=1, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 1 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 4, ordem: 2
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=4, ordem=2, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 4 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 4 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 3, ordem: 3
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=3, ordem=3, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 3 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 3 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 5, ordem: 4
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=5, ordem=4, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 5 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 5 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 2, ordem: 5
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=2, ordem=5, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 2 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 2 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Adicionando mídia ID: 6, ordem: 6
+[04-Aug-2025 17:17:57 America/Fortaleza] addMidia() chamado: playlist=30, midia=6, ordem=6, tempo=30
+[04-Aug-2025 17:17:57 America/Fortaleza] ✅ Mídia 6 adicionada com sucesso à playlist 30
+[04-Aug-2025 17:17:57 America/Fortaleza] Mídia 6 adicionada com sucesso
+[04-Aug-2025 17:17:57 America/Fortaleza] Total de mídias salvas: 6
+[04-Aug-2025 23:27:06 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 23:27:06 America/Fortaleza] Parâmetros: nome=Moldura teste final, telaId=7, dataInicio=2025-08-05 23:26:00, dataFim=2025-08-05 23:36:00
+[04-Aug-2025 23:27:06 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 23:27:06 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 23:27:06 America/Fortaleza] Playlist criada com ID: 31
+[04-Aug-2025 23:27:06 America/Fortaleza] Playlist criada com ID: 31
+[04-Aug-2025 23:27:06 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 23:27:06 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 23:27:06 America/Fortaleza] addMidia() chamado: playlist=31, midia=7, ordem=1, tempo=30
+[04-Aug-2025 23:27:06 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 31
+[04-Aug-2025 23:27:06 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 23:27:06 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 23:29:43 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 23:29:43 America/Fortaleza] Parâmetros: nome=Moldura Nova, telaId=10, dataInicio=2025-08-05 23:28:00, dataFim=2025-08-05 23:35:00
+[04-Aug-2025 23:29:43 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 23:29:43 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 23:29:43 America/Fortaleza] Playlist criada com ID: 32
+[04-Aug-2025 23:29:43 America/Fortaleza] Playlist criada com ID: 32
+[04-Aug-2025 23:29:43 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 23:29:43 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 23:29:43 America/Fortaleza] addMidia() chamado: playlist=32, midia=7, ordem=1, tempo=30
+[04-Aug-2025 23:29:43 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 32
+[04-Aug-2025 23:29:43 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 23:29:43 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 23:39:34 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 23:39:34 America/Fortaleza] Parâmetros: nome=Teste Moldura Atualizado, telaId=10, dataInicio=2025-08-04 23:38:00, dataFim=2025-08-04 23:48:00
+[04-Aug-2025 23:39:34 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 23:39:34 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 23:39:34 America/Fortaleza] Playlist criada com ID: 33
+[04-Aug-2025 23:39:34 America/Fortaleza] Playlist criada com ID: 33
+[04-Aug-2025 23:39:34 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 23:39:34 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 23:39:34 America/Fortaleza] addMidia() chamado: playlist=33, midia=7, ordem=1, tempo=30
+[04-Aug-2025 23:39:34 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 33
+[04-Aug-2025 23:39:34 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 23:39:34 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 23:53:07 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 23:53:07 America/Fortaleza] Parâmetros: nome=Teste Moldura Teste, telaId=10, dataInicio=2025-08-04 23:52:00, dataFim=2025-08-05 00:00:00
+[04-Aug-2025 23:53:07 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 23:53:07 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 23:53:07 America/Fortaleza] Playlist criada com ID: 34
+[04-Aug-2025 23:53:07 America/Fortaleza] Playlist criada com ID: 34
+[04-Aug-2025 23:53:07 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 23:53:07 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 23:53:07 America/Fortaleza] addMidia() chamado: playlist=34, midia=7, ordem=1, tempo=30
+[04-Aug-2025 23:53:07 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 34
+[04-Aug-2025 23:53:07 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 23:53:07 America/Fortaleza] Total de mídias salvas: 1
+[04-Aug-2025 23:59:57 America/Fortaleza] PlaylistController->create() chamado
+[04-Aug-2025 23:59:57 America/Fortaleza] Parâmetros: nome=Matriz, telaId=10, dataInicio=2025-08-04 02:59:00, dataFim=2025-08-05 00:03:00
+[04-Aug-2025 23:59:57 America/Fortaleza] Mídias recebidas: [7]
+[04-Aug-2025 23:59:57 America/Fortaleza] Criando playlist no banco...
+[04-Aug-2025 23:59:57 America/Fortaleza] Playlist criada com ID: 35
+[04-Aug-2025 23:59:57 America/Fortaleza] Playlist criada com ID: 35
+[04-Aug-2025 23:59:57 America/Fortaleza] Processando 1 mídias...
+[04-Aug-2025 23:59:57 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[04-Aug-2025 23:59:57 America/Fortaleza] addMidia() chamado: playlist=35, midia=7, ordem=1, tempo=30
+[04-Aug-2025 23:59:57 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 35
+[04-Aug-2025 23:59:57 America/Fortaleza] Mídia 7 adicionada com sucesso
+[04-Aug-2025 23:59:57 America/Fortaleza] Total de mídias salvas: 1
+[05-Aug-2025 00:02:03 America/Fortaleza] PlaylistController->create() chamado
+[05-Aug-2025 00:02:03 America/Fortaleza] Parâmetros: nome=test, telaId=10, dataInicio=2025-08-05 00:01:00, dataFim=2025-08-05 00:06:00
+[05-Aug-2025 00:02:03 America/Fortaleza] Mídias recebidas: [7]
+[05-Aug-2025 00:02:03 America/Fortaleza] Criando playlist no banco...
+[05-Aug-2025 00:02:03 America/Fortaleza] Playlist criada com ID: 36
+[05-Aug-2025 00:02:03 America/Fortaleza] Playlist criada com ID: 36
+[05-Aug-2025 00:02:03 America/Fortaleza] Processando 1 mídias...
+[05-Aug-2025 00:02:03 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[05-Aug-2025 00:02:03 America/Fortaleza] addMidia() chamado: playlist=36, midia=7, ordem=1, tempo=30
+[05-Aug-2025 00:02:03 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 36
+[05-Aug-2025 00:02:03 America/Fortaleza] Mídia 7 adicionada com sucesso
+[05-Aug-2025 00:02:03 America/Fortaleza] Total de mídias salvas: 1
+[05-Aug-2025 10:25:17 America/Fortaleza] PlaylistController->create() chamado
+[05-Aug-2025 10:25:17 America/Fortaleza] Parâmetros: nome=TESTE NOVO LAYOUT, telaId=13, dataInicio=2025-08-05 10:24:00, dataFim=2025-08-05 10:34:00
+[05-Aug-2025 10:25:17 America/Fortaleza] Mídias recebidas: [1]
+[05-Aug-2025 10:25:17 America/Fortaleza] Criando playlist no banco...
+[05-Aug-2025 10:25:17 America/Fortaleza] Playlist criada com ID: 37
+[05-Aug-2025 10:25:17 America/Fortaleza] Playlist criada com ID: 37
+[05-Aug-2025 10:25:17 America/Fortaleza] Processando 1 mídias...
+[05-Aug-2025 10:25:17 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[05-Aug-2025 10:25:17 America/Fortaleza] addMidia() chamado: playlist=37, midia=1, ordem=1, tempo=30
+[05-Aug-2025 10:25:17 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 37
+[05-Aug-2025 10:25:17 America/Fortaleza] Mídia 1 adicionada com sucesso
+[05-Aug-2025 10:25:17 America/Fortaleza] Total de mídias salvas: 1
+[05-Aug-2025 10:26:32 America/Fortaleza] PlaylistController->create() chamado
+[05-Aug-2025 10:26:32 America/Fortaleza] Parâmetros: nome=Teste Novo code, telaId=14, dataInicio=2025-08-05 10:26:00, dataFim=2025-08-05 14:28:00
+[05-Aug-2025 10:26:32 America/Fortaleza] Mídias recebidas: [1]
+[05-Aug-2025 10:26:32 America/Fortaleza] Criando playlist no banco...
+[05-Aug-2025 10:26:32 America/Fortaleza] Playlist criada com ID: 38
+[05-Aug-2025 10:26:32 America/Fortaleza] Playlist criada com ID: 38
+[05-Aug-2025 10:26:32 America/Fortaleza] Processando 1 mídias...
+[05-Aug-2025 10:26:32 America/Fortaleza] Adicionando mídia ID: 1, ordem: 1
+[05-Aug-2025 10:26:32 America/Fortaleza] addMidia() chamado: playlist=38, midia=1, ordem=1, tempo=30
+[05-Aug-2025 10:26:32 America/Fortaleza] ✅ Mídia 1 adicionada com sucesso à playlist 38
+[05-Aug-2025 10:26:32 America/Fortaleza] Mídia 1 adicionada com sucesso
+[05-Aug-2025 10:26:32 America/Fortaleza] Total de mídias salvas: 1
+[05-Aug-2025 21:07:59 America/Fortaleza] Caminho corrigido para DIVULGA: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4 -> /assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4
+[05-Aug-2025 21:07:59 America/Fortaleza] Mídias carregadas para playlist 38: 1 (caminhos corrigidos)
+[05-Aug-2025 21:08:07 America/Fortaleza] Caminho corrigido para DIVULGA: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4 -> /assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4
+[05-Aug-2025 21:08:07 America/Fortaleza] Mídias carregadas para playlist 38: 1 (caminhos corrigidos)
+[05-Aug-2025 22:37:04 America/Fortaleza] Caminho corrigido para DIVULGA: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4 -> /assets/uploads/videos/DIVULGA_1754192300_688ed9acb963d.mp4
+[05-Aug-2025 22:37:04 America/Fortaleza] Mídias carregadas para playlist 28: 1 (caminhos corrigidos)
+[07-Aug-2025 21:42:45 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 21:42:45 America/Fortaleza] Parâmetros: nome=Teste Indicador, telaId=16, dataInicio=2025-08-07 21:42:00, dataFim=2025-08-07 22:42:00
+[07-Aug-2025 21:42:45 America/Fortaleza] Mídias recebidas: [8]
+[07-Aug-2025 21:42:45 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 21:42:45 America/Fortaleza] Playlist criada com ID: 39
+[07-Aug-2025 21:42:45 America/Fortaleza] Playlist criada com ID: 39
+[07-Aug-2025 21:42:45 America/Fortaleza] Processando 1 mídias...
+[07-Aug-2025 21:42:45 America/Fortaleza] Adicionando mídia ID: 8, ordem: 1
+[07-Aug-2025 21:42:45 America/Fortaleza] addMidia() chamado: playlist=39, midia=8, ordem=1, tempo=30
+[07-Aug-2025 21:42:45 America/Fortaleza] ✅ Mídia 8 adicionada com sucesso à playlist 39
+[07-Aug-2025 21:42:45 America/Fortaleza] Mídia 8 adicionada com sucesso
+[07-Aug-2025 21:42:45 America/Fortaleza] Total de mídias salvas: 1
+[07-Aug-2025 21:54:02 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 21:54:02 America/Fortaleza] Parâmetros: nome=Cielo TVs, telaId=5, dataInicio=2025-08-07 21:53:00, dataFim=2030-12-31 00:00:00
+[07-Aug-2025 21:54:02 America/Fortaleza] Mídias recebidas: [7,9]
+[07-Aug-2025 21:54:02 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 21:54:02 America/Fortaleza] Playlist criada com ID: 40
+[07-Aug-2025 21:54:02 America/Fortaleza] Playlist criada com ID: 40
+[07-Aug-2025 21:54:02 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 21:54:02 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[07-Aug-2025 21:54:02 America/Fortaleza] addMidia() chamado: playlist=40, midia=7, ordem=1, tempo=30
+[07-Aug-2025 21:54:02 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 40
+[07-Aug-2025 21:54:02 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 21:54:02 America/Fortaleza] Adicionando mídia ID: 9, ordem: 2
+[07-Aug-2025 21:54:02 America/Fortaleza] addMidia() chamado: playlist=40, midia=9, ordem=2, tempo=30
+[07-Aug-2025 21:54:02 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 40
+[07-Aug-2025 21:54:02 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 21:54:02 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 22:04:40 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:04:40 America/Fortaleza] Parâmetros: nome=Teste, telaId=16, dataInicio=2025-08-07 22:04:00, dataFim=2025-08-07 23:04:00
+[07-Aug-2025 22:04:40 America/Fortaleza] Mídias recebidas: [9,7]
+[07-Aug-2025 22:04:40 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:04:40 America/Fortaleza] Playlist criada com ID: 41
+[07-Aug-2025 22:04:40 America/Fortaleza] Playlist criada com ID: 41
+[07-Aug-2025 22:04:40 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 22:04:40 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 22:04:40 America/Fortaleza] addMidia() chamado: playlist=41, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:04:40 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 41
+[07-Aug-2025 22:04:40 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 22:04:40 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[07-Aug-2025 22:04:40 America/Fortaleza] addMidia() chamado: playlist=41, midia=7, ordem=2, tempo=30
+[07-Aug-2025 22:04:40 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 41
+[07-Aug-2025 22:04:40 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:04:40 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 22:16:23 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 22:16:23 America/Fortaleza] Mídias carregadas para playlist 41: 2 (caminhos corrigidos)
+[07-Aug-2025 22:22:52 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 22:22:52 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[07-Aug-2025 22:24:23 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined method Playlist::clone() in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php:43
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/playlists/clone.php on line 43
+[07-Aug-2025 22:24:37 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:24:37 America/Fortaleza] Parâmetros: nome=test, telaId=16, dataInicio=2025-08-07 22:24:00, dataFim=2025-08-07 23:24:00
+[07-Aug-2025 22:24:37 America/Fortaleza] Mídias recebidas: [9,7]
+[07-Aug-2025 22:24:37 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:24:37 America/Fortaleza] Playlist criada com ID: 42
+[07-Aug-2025 22:24:37 America/Fortaleza] Playlist criada com ID: 42
+[07-Aug-2025 22:24:37 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 22:24:37 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 22:24:37 America/Fortaleza] addMidia() chamado: playlist=42, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:24:37 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 42
+[07-Aug-2025 22:24:37 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 22:24:37 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[07-Aug-2025 22:24:37 America/Fortaleza] addMidia() chamado: playlist=42, midia=7, ordem=2, tempo=30
+[07-Aug-2025 22:24:37 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 42
+[07-Aug-2025 22:24:37 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:24:37 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 22:25:09 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:25:09 America/Fortaleza] Parâmetros: nome=testando2, telaId=15, dataInicio=2025-08-07 22:25:00, dataFim=2025-08-07 23:25:00
+[07-Aug-2025 22:25:09 America/Fortaleza] Mídias recebidas: [7]
+[07-Aug-2025 22:25:09 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:25:09 America/Fortaleza] Playlist criada com ID: 43
+[07-Aug-2025 22:25:09 America/Fortaleza] Playlist criada com ID: 43
+[07-Aug-2025 22:25:09 America/Fortaleza] Processando 1 mídias...
+[07-Aug-2025 22:25:09 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[07-Aug-2025 22:25:09 America/Fortaleza] addMidia() chamado: playlist=43, midia=7, ordem=1, tempo=30
+[07-Aug-2025 22:25:09 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 43
+[07-Aug-2025 22:25:09 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:25:09 America/Fortaleza] Total de mídias salvas: 1
+[07-Aug-2025 22:25:24 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:25:24 America/Fortaleza] Parâmetros: nome=Alrora, telaId=15, dataInicio=2025-08-07 22:25:00, dataFim=2025-08-07 23:25:00
+[07-Aug-2025 22:25:24 America/Fortaleza] Mídias recebidas: [7]
+[07-Aug-2025 22:25:24 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:25:24 America/Fortaleza] Playlist criada com ID: 44
+[07-Aug-2025 22:25:24 America/Fortaleza] Playlist criada com ID: 44
+[07-Aug-2025 22:25:24 America/Fortaleza] Processando 1 mídias...
+[07-Aug-2025 22:25:24 America/Fortaleza] Adicionando mídia ID: 7, ordem: 1
+[07-Aug-2025 22:25:24 America/Fortaleza] addMidia() chamado: playlist=44, midia=7, ordem=1, tempo=30
+[07-Aug-2025 22:25:24 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 44
+[07-Aug-2025 22:25:24 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:25:24 America/Fortaleza] Total de mídias salvas: 1
+[07-Aug-2025 22:27:18 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:27:18 America/Fortaleza] Parâmetros: nome=minguante, telaId=16, dataInicio=2025-08-07 22:27:00, dataFim=2025-08-07 23:27:00
+[07-Aug-2025 22:27:18 America/Fortaleza] Mídias recebidas: [9]
+[07-Aug-2025 22:27:18 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:27:18 America/Fortaleza] Playlist criada com ID: 45
+[07-Aug-2025 22:27:18 America/Fortaleza] Playlist criada com ID: 45
+[07-Aug-2025 22:27:18 America/Fortaleza] Processando 1 mídias...
+[07-Aug-2025 22:27:18 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 22:27:18 America/Fortaleza] addMidia() chamado: playlist=45, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:27:18 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 45
+[07-Aug-2025 22:27:18 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 22:27:18 America/Fortaleza] Total de mídias salvas: 1
+[07-Aug-2025 22:27:48 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:27:48 America/Fortaleza] Parâmetros: nome=Cristal, telaId=16, dataInicio=2025-08-07 22:27:00, dataFim=2025-08-07 23:27:00
+[07-Aug-2025 22:27:48 America/Fortaleza] Mídias recebidas: [9,7]
+[07-Aug-2025 22:27:48 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:27:48 America/Fortaleza] Playlist criada com ID: 46
+[07-Aug-2025 22:27:48 America/Fortaleza] Playlist criada com ID: 46
+[07-Aug-2025 22:27:48 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 22:27:48 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 22:27:48 America/Fortaleza] addMidia() chamado: playlist=46, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:27:48 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 46
+[07-Aug-2025 22:27:48 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 22:27:48 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[07-Aug-2025 22:27:48 America/Fortaleza] addMidia() chamado: playlist=46, midia=7, ordem=2, tempo=30
+[07-Aug-2025 22:27:48 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 46
+[07-Aug-2025 22:27:48 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:27:48 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 22:30:04 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 22:30:04 America/Fortaleza] Parâmetros: nome=pipoca, telaId=16, dataInicio=2025-08-07 22:29:00, dataFim=2025-08-07 23:29:00
+[07-Aug-2025 22:30:04 America/Fortaleza] Mídias recebidas: [9,7]
+[07-Aug-2025 22:30:04 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 22:30:04 America/Fortaleza] Playlist criada com ID: 47
+[07-Aug-2025 22:30:04 America/Fortaleza] Playlist criada com ID: 47
+[07-Aug-2025 22:30:04 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 22:30:04 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 22:30:04 America/Fortaleza] addMidia() chamado: playlist=47, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:30:04 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 47
+[07-Aug-2025 22:30:04 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 22:30:04 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[07-Aug-2025 22:30:04 America/Fortaleza] addMidia() chamado: playlist=47, midia=7, ordem=2, tempo=30
+[07-Aug-2025 22:30:04 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 47
+[07-Aug-2025 22:30:04 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 22:30:04 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 22:32:41 America/Fortaleza] Playlist criada com ID: 48
+[07-Aug-2025 22:32:41 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 22:32:41 America/Fortaleza] Mídias carregadas para playlist 47: 2 (caminhos corrigidos)
+[07-Aug-2025 22:32:41 America/Fortaleza] addMidia() chamado: playlist=48, midia=9, ordem=1, tempo=30
+[07-Aug-2025 22:32:41 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 48
+[07-Aug-2025 22:32:41 America/Fortaleza] addMidia() chamado: playlist=48, midia=7, ordem=2, tempo=30
+[07-Aug-2025 22:32:41 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 48
+[07-Aug-2025 23:09:52 America/Fortaleza] PlaylistController->create() chamado
+[07-Aug-2025 23:09:52 America/Fortaleza] Parâmetros: nome=Teste, telaId=16, dataInicio=2025-08-07 23:09:00, dataFim=2025-08-08 00:09:00
+[07-Aug-2025 23:09:52 America/Fortaleza] Mídias recebidas: [9,7]
+[07-Aug-2025 23:09:52 America/Fortaleza] Criando playlist no banco...
+[07-Aug-2025 23:09:52 America/Fortaleza] Playlist criada com ID: 49
+[07-Aug-2025 23:09:52 America/Fortaleza] Playlist criada com ID: 49
+[07-Aug-2025 23:09:52 America/Fortaleza] Processando 2 mídias...
+[07-Aug-2025 23:09:52 America/Fortaleza] Adicionando mídia ID: 9, ordem: 1
+[07-Aug-2025 23:09:52 America/Fortaleza] addMidia() chamado: playlist=49, midia=9, ordem=1, tempo=30
+[07-Aug-2025 23:09:52 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 49
+[07-Aug-2025 23:09:52 America/Fortaleza] Mídia 9 adicionada com sucesso
+[07-Aug-2025 23:09:52 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[07-Aug-2025 23:09:52 America/Fortaleza] addMidia() chamado: playlist=49, midia=7, ordem=2, tempo=30
+[07-Aug-2025 23:09:52 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 49
+[07-Aug-2025 23:09:52 America/Fortaleza] Mídia 7 adicionada com sucesso
+[07-Aug-2025 23:09:52 America/Fortaleza] Total de mídias salvas: 2
+[07-Aug-2025 23:09:58 America/Fortaleza] Playlist criada com ID: 50
+[07-Aug-2025 23:09:58 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 23:09:58 America/Fortaleza] Mídias carregadas para playlist 49: 2 (caminhos corrigidos)
+[07-Aug-2025 23:09:58 America/Fortaleza] addMidia() chamado: playlist=50, midia=9, ordem=1, tempo=30
+[07-Aug-2025 23:09:58 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 50
+[07-Aug-2025 23:09:58 America/Fortaleza] addMidia() chamado: playlist=50, midia=7, ordem=2, tempo=30
+[07-Aug-2025 23:09:58 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 50
+[07-Aug-2025 23:10:14 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 23:10:14 America/Fortaleza] Mídias carregadas para playlist 49: 2 (caminhos corrigidos)
+[07-Aug-2025 23:18:23 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[07-Aug-2025 23:18:23 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[08-Aug-2025 16:02:43 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[08-Aug-2025 16:02:43 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[08-Aug-2025 16:15:34 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[08-Aug-2025 16:15:34 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[08-Aug-2025 16:16:02 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[08-Aug-2025 16:16:02 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[09-Aug-2025 14:27:51 America/Fortaleza] PlaylistController->create() chamado
+[09-Aug-2025 14:27:51 America/Fortaleza] Parâmetros: nome=teste, telaId=16, dataInicio=2025-08-09 14:27:00, dataFim=2025-08-09 15:27:00
+[09-Aug-2025 14:27:51 America/Fortaleza] Mídias recebidas: [11]
+[09-Aug-2025 14:27:51 America/Fortaleza] Criando playlist no banco...
+[09-Aug-2025 14:27:51 America/Fortaleza] Playlist criada com ID: 51
+[09-Aug-2025 14:27:51 America/Fortaleza] Playlist criada com ID: 51
+[09-Aug-2025 14:27:51 America/Fortaleza] Processando 1 mídias...
+[09-Aug-2025 14:27:51 America/Fortaleza] Adicionando mídia ID: 11, ordem: 1
+[09-Aug-2025 14:27:51 America/Fortaleza] addMidia() chamado: playlist=51, midia=11, ordem=1, tempo=30
+[09-Aug-2025 14:27:51 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 51
+[09-Aug-2025 14:27:51 America/Fortaleza] Mídia 11 adicionada com sucesso
+[09-Aug-2025 14:27:51 America/Fortaleza] Total de mídias salvas: 1
+[09-Aug-2025 14:28:50 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[09-Aug-2025 14:28:50 America/Fortaleza] Mídias carregadas para playlist 40: 2 (caminhos corrigidos)
+[09-Aug-2025 18:28:54 America/Fortaleza] addMidia() chamado: playlist=51, midia=11, ordem=1, tempo=30
+[09-Aug-2025 18:28:54 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 51
+[09-Aug-2025 18:56:25 America/Fortaleza] addMidia() chamado: playlist=51, midia=11, ordem=1, tempo=30
+[09-Aug-2025 18:56:25 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 51
+[09-Aug-2025 18:57:35 America/Fortaleza] PlaylistController->create() chamado
+[09-Aug-2025 18:57:35 America/Fortaleza] Parâmetros: nome=test, telaId=16, dataInicio=2025-08-09 18:57:00, dataFim=2025-08-19 00:57:00
+[09-Aug-2025 18:57:35 America/Fortaleza] Mídias recebidas: [11,9]
+[09-Aug-2025 18:57:35 America/Fortaleza] Criando playlist no banco...
+[09-Aug-2025 18:57:35 America/Fortaleza] Playlist criada com ID: 52
+[09-Aug-2025 18:57:35 America/Fortaleza] Playlist criada com ID: 52
+[09-Aug-2025 18:57:35 America/Fortaleza] Processando 2 mídias...
+[09-Aug-2025 18:57:35 America/Fortaleza] Adicionando mídia ID: 11, ordem: 1
+[09-Aug-2025 18:57:35 America/Fortaleza] addMidia() chamado: playlist=52, midia=11, ordem=1, tempo=30
+[09-Aug-2025 18:57:35 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 52
+[09-Aug-2025 18:57:35 America/Fortaleza] Mídia 11 adicionada com sucesso
+[09-Aug-2025 18:57:35 America/Fortaleza] Adicionando mídia ID: 9, ordem: 2
+[09-Aug-2025 18:57:35 America/Fortaleza] addMidia() chamado: playlist=52, midia=9, ordem=2, tempo=30
+[09-Aug-2025 18:57:35 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 52
+[09-Aug-2025 18:57:35 America/Fortaleza] Mídia 9 adicionada com sucesso
+[09-Aug-2025 18:57:35 America/Fortaleza] Total de mídias salvas: 2
+[09-Aug-2025 19:38:15 America/Fortaleza] PlaylistController->create() chamado
+[09-Aug-2025 19:38:15 America/Fortaleza] Parâmetros: nome=Site Moldura, telaId=15, dataInicio=2025-08-09 19:37:00, dataFim=2025-08-09 20:37:00
+[09-Aug-2025 19:38:15 America/Fortaleza] Mídias recebidas: [11,9,7]
+[09-Aug-2025 19:38:15 America/Fortaleza] Criando playlist no banco...
+[09-Aug-2025 19:38:15 America/Fortaleza] Playlist criada com ID: 53
+[09-Aug-2025 19:38:15 America/Fortaleza] Playlist criada com ID: 53
+[09-Aug-2025 19:38:15 America/Fortaleza] Processando 3 mídias...
+[09-Aug-2025 19:38:15 America/Fortaleza] Adicionando mídia ID: 11, ordem: 1
+[09-Aug-2025 19:38:15 America/Fortaleza] addMidia() chamado: playlist=53, midia=11, ordem=1, tempo=30
+[09-Aug-2025 19:38:15 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 53
+[09-Aug-2025 19:38:15 America/Fortaleza] Mídia 11 adicionada com sucesso
+[09-Aug-2025 19:38:15 America/Fortaleza] Adicionando mídia ID: 9, ordem: 2
+[09-Aug-2025 19:38:15 America/Fortaleza] addMidia() chamado: playlist=53, midia=9, ordem=2, tempo=30
+[09-Aug-2025 19:38:15 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 53
+[09-Aug-2025 19:38:15 America/Fortaleza] Mídia 9 adicionada com sucesso
+[09-Aug-2025 19:38:15 America/Fortaleza] Adicionando mídia ID: 7, ordem: 3
+[09-Aug-2025 19:38:15 America/Fortaleza] addMidia() chamado: playlist=53, midia=7, ordem=3, tempo=30
+[09-Aug-2025 19:38:15 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 53
+[09-Aug-2025 19:38:15 America/Fortaleza] Mídia 7 adicionada com sucesso
+[09-Aug-2025 19:38:15 America/Fortaleza] Total de mídias salvas: 3
+[09-Aug-2025 20:16:43 America/Fortaleza] addMidia() chamado: playlist=52, midia=11, ordem=1, tempo=30
+[09-Aug-2025 20:16:43 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 52
+[12-Aug-2025 13:31:09 America/Fortaleza] PlaylistController->create() chamado
+[12-Aug-2025 13:31:09 America/Fortaleza] Parâmetros: nome=Teste, telaId=15, dataInicio=2025-08-12 13:30:00, dataFim=2040-09-12 14:30:00
+[12-Aug-2025 13:31:09 America/Fortaleza] Mídias recebidas: [12,7,11]
+[12-Aug-2025 13:31:09 America/Fortaleza] Criando playlist no banco...
+[12-Aug-2025 13:31:09 America/Fortaleza] Playlist criada com ID: 54
+[12-Aug-2025 13:31:09 America/Fortaleza] Playlist criada com ID: 54
+[12-Aug-2025 13:31:09 America/Fortaleza] Processando 3 mídias...
+[12-Aug-2025 13:31:09 America/Fortaleza] Adicionando mídia ID: 12, ordem: 1
+[12-Aug-2025 13:31:09 America/Fortaleza] addMidia() chamado: playlist=54, midia=12, ordem=1, tempo=30
+[12-Aug-2025 13:31:09 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 54
+[12-Aug-2025 13:31:09 America/Fortaleza] Mídia 12 adicionada com sucesso
+[12-Aug-2025 13:31:09 America/Fortaleza] Adicionando mídia ID: 7, ordem: 2
+[12-Aug-2025 13:31:09 America/Fortaleza] addMidia() chamado: playlist=54, midia=7, ordem=2, tempo=30
+[12-Aug-2025 13:31:09 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 54
+[12-Aug-2025 13:31:09 America/Fortaleza] Mídia 7 adicionada com sucesso
+[12-Aug-2025 13:31:09 America/Fortaleza] Adicionando mídia ID: 11, ordem: 3
+[12-Aug-2025 13:31:09 America/Fortaleza] addMidia() chamado: playlist=54, midia=11, ordem=3, tempo=30
+[12-Aug-2025 13:31:09 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 54
+[12-Aug-2025 13:31:09 America/Fortaleza] Mídia 11 adicionada com sucesso
+[12-Aug-2025 13:31:09 America/Fortaleza] Total de mídias salvas: 3
+[12-Aug-2025 13:31:36 America/Fortaleza] addMidia() chamado: playlist=40, midia=9, ordem=1, tempo=30
+[12-Aug-2025 13:31:36 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 40
+[12-Aug-2025 13:31:36 America/Fortaleza] addMidia() chamado: playlist=40, midia=7, ordem=2, tempo=30
+[12-Aug-2025 13:31:36 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 40
+[12-Aug-2025 13:31:48 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[12-Aug-2025 13:31:48 America/Fortaleza] Mídias carregadas para playlist 54: 3 (caminhos corrigidos)
+[12-Aug-2025 13:32:10 America/Fortaleza] addMidia() chamado: playlist=54, midia=12, ordem=1, tempo=30
+[12-Aug-2025 13:32:10 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 54
+[12-Aug-2025 13:32:10 America/Fortaleza] addMidia() chamado: playlist=54, midia=7, ordem=2, tempo=30
+[12-Aug-2025 13:32:10 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 54
+[12-Aug-2025 13:32:10 America/Fortaleza] addMidia() chamado: playlist=54, midia=11, ordem=3, tempo=30
+[12-Aug-2025 13:32:10 America/Fortaleza] ✅ Mídia 11 adicionada com sucesso à playlist 54
+[29-Aug-2025 13:30:40 America/Fortaleza] addMidia() chamado: playlist=40, midia=9, ordem=1, tempo=30
+[29-Aug-2025 13:30:40 America/Fortaleza] ✅ Mídia 9 adicionada com sucesso à playlist 40
+[29-Aug-2025 13:30:40 America/Fortaleza] addMidia() chamado: playlist=40, midia=7, ordem=2, tempo=30
+[29-Aug-2025 13:30:40 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 40
+[29-Aug-2025 13:37:06 America/Fortaleza] PlaylistController->create() chamado
+[29-Aug-2025 13:37:06 America/Fortaleza] Parâmetros: nome=Novo Cielo, telaId=5, dataInicio=2025-08-29 13:36:00, dataFim=2030-12-31 14:36:00
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídias recebidas: [15,12,14,13,7]
+[29-Aug-2025 13:37:06 America/Fortaleza] Criando playlist no banco...
+[29-Aug-2025 13:37:06 America/Fortaleza] Playlist criada com ID: 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Playlist criada com ID: 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Processando 5 mídias...
+[29-Aug-2025 13:37:06 America/Fortaleza] Adicionando mídia ID: 15, ordem: 1
+[29-Aug-2025 13:37:06 America/Fortaleza] addMidia() chamado: playlist=55, midia=15, ordem=1, tempo=30
+[29-Aug-2025 13:37:06 America/Fortaleza] ✅ Mídia 15 adicionada com sucesso à playlist 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídia 15 adicionada com sucesso
+[29-Aug-2025 13:37:06 America/Fortaleza] Adicionando mídia ID: 12, ordem: 2
+[29-Aug-2025 13:37:06 America/Fortaleza] addMidia() chamado: playlist=55, midia=12, ordem=2, tempo=30
+[29-Aug-2025 13:37:06 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídia 12 adicionada com sucesso
+[29-Aug-2025 13:37:06 America/Fortaleza] Adicionando mídia ID: 14, ordem: 3
+[29-Aug-2025 13:37:06 America/Fortaleza] addMidia() chamado: playlist=55, midia=14, ordem=3, tempo=30
+[29-Aug-2025 13:37:06 America/Fortaleza] ✅ Mídia 14 adicionada com sucesso à playlist 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídia 14 adicionada com sucesso
+[29-Aug-2025 13:37:06 America/Fortaleza] Adicionando mídia ID: 13, ordem: 4
+[29-Aug-2025 13:37:06 America/Fortaleza] addMidia() chamado: playlist=55, midia=13, ordem=4, tempo=30
+[29-Aug-2025 13:37:06 America/Fortaleza] ✅ Mídia 13 adicionada com sucesso à playlist 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídia 13 adicionada com sucesso
+[29-Aug-2025 13:37:06 America/Fortaleza] Adicionando mídia ID: 7, ordem: 5
+[29-Aug-2025 13:37:06 America/Fortaleza] addMidia() chamado: playlist=55, midia=7, ordem=5, tempo=30
+[29-Aug-2025 13:37:06 America/Fortaleza] ✅ Mídia 7 adicionada com sucesso à playlist 55
+[29-Aug-2025 13:37:06 America/Fortaleza] Mídia 7 adicionada com sucesso
+[29-Aug-2025 13:37:06 America/Fortaleza] Total de mídias salvas: 5
+[29-Aug-2025 13:46:08 America/Fortaleza] Caminho corrigido para Escadas: https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756485355_68b1d6eb68d08.mp4 -> /https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756485355_68b1d6eb68d08.mp4
+[29-Aug-2025 13:46:08 America/Fortaleza] Caminho corrigido para CTDI_Global Video 2021_Cust: /home2/dani7103/epi.danielsantos.eng.br/config/../assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4 -> /assets/uploads/videos/CTDI_Global Video 2021_Cust_1754309935_6890a52f32b52.mp4
+[29-Aug-2025 13:46:08 America/Fortaleza] Mídias carregadas para playlist 55: 3 (caminhos corrigidos)
+[29-Aug-2025 13:49:01 America/Fortaleza] PlaylistController->create() chamado
+[29-Aug-2025 13:49:01 America/Fortaleza] Parâmetros: nome=Tv Cielo, telaId=5, dataInicio=2025-08-29 13:48:00, dataFim=2030-12-31 14:48:00
+[29-Aug-2025 13:49:01 America/Fortaleza] Mídias recebidas: [15]
+[29-Aug-2025 13:49:01 America/Fortaleza] Criando playlist no banco...
+[29-Aug-2025 13:49:01 America/Fortaleza] Playlist criada com ID: 56
+[29-Aug-2025 13:49:01 America/Fortaleza] Playlist criada com ID: 56
+[29-Aug-2025 13:49:01 America/Fortaleza] Processando 1 mídias...
+[29-Aug-2025 13:49:01 America/Fortaleza] Adicionando mídia ID: 15, ordem: 1
+[29-Aug-2025 13:49:01 America/Fortaleza] addMidia() chamado: playlist=56, midia=15, ordem=1, tempo=30
+[29-Aug-2025 13:49:01 America/Fortaleza] ✅ Mídia 15 adicionada com sucesso à playlist 56
+[29-Aug-2025 13:49:01 America/Fortaleza] Mídia 15 adicionada com sucesso
+[29-Aug-2025 13:49:01 America/Fortaleza] Total de mídias salvas: 1
+[29-Aug-2025 13:56:30 America/Fortaleza] PlaylistController->create() chamado
+[29-Aug-2025 13:56:30 America/Fortaleza] Parâmetros: nome=asdasdsa, telaId=5, dataInicio=2025-08-29 13:56:00, dataFim=2025-08-31 14:56:00
+[29-Aug-2025 13:56:30 America/Fortaleza] Mídias recebidas: [16]
+[29-Aug-2025 13:56:30 America/Fortaleza] Criando playlist no banco...
+[29-Aug-2025 13:56:30 America/Fortaleza] Playlist criada com ID: 57
+[29-Aug-2025 13:56:30 America/Fortaleza] Playlist criada com ID: 57
+[29-Aug-2025 13:56:30 America/Fortaleza] Processando 1 mídias...
+[29-Aug-2025 13:56:30 America/Fortaleza] Adicionando mídia ID: 16, ordem: 1
+[29-Aug-2025 13:56:30 America/Fortaleza] addMidia() chamado: playlist=57, midia=16, ordem=1, tempo=30
+[29-Aug-2025 13:56:30 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 57
+[29-Aug-2025 13:56:30 America/Fortaleza] Mídia 16 adicionada com sucesso
+[29-Aug-2025 13:56:30 America/Fortaleza] Total de mídias salvas: 1
+[04-Sep-2025 09:32:19 America/Fortaleza] Caminho corrigido para Escadas: https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756486556_68b1db9cba906.mp4 -> /https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756486556_68b1db9cba906.mp4
+[04-Sep-2025 09:32:19 America/Fortaleza] Mídias carregadas para playlist 57: 1 (caminhos corrigidos)
+[04-Sep-2025 09:32:23 America/Fortaleza] Mídias carregadas para playlist 53: 0 (caminhos corrigidos)
+[04-Sep-2025 10:11:12 America/Fortaleza] PlaylistController->create() chamado
+[04-Sep-2025 10:11:12 America/Fortaleza] Parâmetros: nome=CIELO TV, telaId=5, dataInicio=2025-09-04 10:10:00, dataFim=2030-12-31 11:10:00
+[04-Sep-2025 10:11:12 America/Fortaleza] Mídias recebidas: [19,12,16,17]
+[04-Sep-2025 10:11:12 America/Fortaleza] Criando playlist no banco...
+[04-Sep-2025 10:11:12 America/Fortaleza] Playlist criada com ID: 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Playlist criada com ID: 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Processando 4 mídias...
+[04-Sep-2025 10:11:12 America/Fortaleza] Adicionando mídia ID: 19, ordem: 1
+[04-Sep-2025 10:11:12 America/Fortaleza] addMidia() chamado: playlist=58, midia=19, ordem=1, tempo=30
+[04-Sep-2025 10:11:12 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Mídia 19 adicionada com sucesso
+[04-Sep-2025 10:11:12 America/Fortaleza] Adicionando mídia ID: 12, ordem: 2
+[04-Sep-2025 10:11:12 America/Fortaleza] addMidia() chamado: playlist=58, midia=12, ordem=2, tempo=30
+[04-Sep-2025 10:11:12 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Mídia 12 adicionada com sucesso
+[04-Sep-2025 10:11:12 America/Fortaleza] Adicionando mídia ID: 16, ordem: 3
+[04-Sep-2025 10:11:12 America/Fortaleza] addMidia() chamado: playlist=58, midia=16, ordem=3, tempo=30
+[04-Sep-2025 10:11:12 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Mídia 16 adicionada com sucesso
+[04-Sep-2025 10:11:12 America/Fortaleza] Adicionando mídia ID: 17, ordem: 4
+[04-Sep-2025 10:11:12 America/Fortaleza] addMidia() chamado: playlist=58, midia=17, ordem=4, tempo=30
+[04-Sep-2025 10:11:12 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 58
+[04-Sep-2025 10:11:12 America/Fortaleza] Mídia 17 adicionada com sucesso
+[04-Sep-2025 10:11:12 America/Fortaleza] Total de mídias salvas: 4
+[20-Sep-2025 23:28:23 America/Fortaleza] Caminho corrigido para USO DO CORRIMÃO: https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756486556_68b1db9cba906.mp4 -> /https://comunica.danielsantos.eng.br/assets/uploads/videos/Escadas_1756486556_68b1db9cba906.mp4
+[20-Sep-2025 23:28:23 America/Fortaleza] Caminho corrigido para CTDI: https://comunica.danielsantos.eng.br/assets/uploads/videos/CTDI_1756991300_68b98f440a3e9.mp4 -> /https://comunica.danielsantos.eng.br/assets/uploads/videos/CTDI_1756991300_68b98f440a3e9.mp4
+[20-Sep-2025 23:28:23 America/Fortaleza] Caminho corrigido para USO DE CELULAR: https://comunica.danielsantos.eng.br/assets/uploads/videos/6 - ORIENTAÇÃO - USO DE CELULAR_1756989190_68b987069e247.mp4 -> /https://comunica.danielsantos.eng.br/assets/uploads/videos/6 - ORIENTAÇÃO - USO DE CELULAR_1756989190_68b987069e247.mp4
+[20-Sep-2025 23:28:23 America/Fortaleza] Mídias carregadas para playlist 62: 3 (caminhos corrigidos)
+[21-Sep-2025 03:45:44 America/Fortaleza] addMidia() chamado: playlist=62, midia=16, ordem=1, tempo=30
+[21-Sep-2025 03:45:44 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:45:44 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=2, tempo=30
+[21-Sep-2025 03:45:44 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:45:44 America/Fortaleza] addMidia() chamado: playlist=62, midia=17, ordem=3, tempo=30
+[21-Sep-2025 03:45:44 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:45:44 America/Fortaleza] addMidia() chamado: playlist=62, midia=31, ordem=4, tempo=10
+[21-Sep-2025 03:45:44 America/Fortaleza] ✅ Mídia 31 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:52:03 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=1, tempo=40
+[21-Sep-2025 03:52:03 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:52:03 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=2, tempo=0
+[21-Sep-2025 03:52:03 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:52:03 America/Fortaleza] addMidia() chamado: playlist=62, midia=16, ordem=3, tempo=0
+[21-Sep-2025 03:52:03 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:52:03 America/Fortaleza] addMidia() chamado: playlist=62, midia=17, ordem=4, tempo=0
+[21-Sep-2025 03:52:03 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 62
+[21-Sep-2025 03:55:13 America/Fortaleza] addMidia() chamado: playlist=65, midia=17, ordem=1, tempo=40
+[21-Sep-2025 03:55:13 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 65
+[21-Sep-2025 03:55:13 America/Fortaleza] addMidia() chamado: playlist=65, midia=12, ordem=2, tempo=40
+[21-Sep-2025 03:55:13 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 65
+[21-Sep-2025 04:32:16 America/Fortaleza] Mídias carregadas para playlist 65: 2 (caminhos corrigidos)
+[21-Sep-2025 05:21:31 America/Fortaleza] addMidia() chamado: playlist=65, midia=17, ordem=1, tempo=40
+[21-Sep-2025 05:21:31 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:21:31 America/Fortaleza] addMidia() chamado: playlist=65, midia=12, ordem=2, tempo=40
+[21-Sep-2025 05:21:31 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:21:31 America/Fortaleza] addMidia() chamado: playlist=65, midia=16, ordem=3, tempo=16
+[21-Sep-2025 05:21:31 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:39:24 America/Fortaleza] addMidia() chamado: playlist=65, midia=17, ordem=1, tempo=40
+[21-Sep-2025 05:39:24 America/Fortaleza] ✅ Mídia 17 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:39:24 America/Fortaleza] addMidia() chamado: playlist=65, midia=12, ordem=2, tempo=40
+[21-Sep-2025 05:39:24 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:39:24 America/Fortaleza] addMidia() chamado: playlist=65, midia=16, ordem=3, tempo=16
+[21-Sep-2025 05:39:24 America/Fortaleza] ✅ Mídia 16 adicionada com sucesso à playlist 65
+[21-Sep-2025 05:39:24 America/Fortaleza] addMidia() chamado: playlist=65, midia=35, ordem=4, tempo=10
+[21-Sep-2025 05:39:24 America/Fortaleza] ✅ Mídia 35 adicionada com sucesso à playlist 65
+[22-Sep-2025 09:18:01 America/Fortaleza] addMidia() chamado: playlist=65, midia=81, ordem=1, tempo=65
+[22-Sep-2025 09:18:01 America/Fortaleza] ✅ Mídia 81 adicionada com sucesso à playlist 65
+[22-Sep-2025 10:21:35 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=1, tempo=40
+[22-Sep-2025 10:21:35 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:21:35 America/Fortaleza] addMidia() chamado: playlist=62, midia=83, ordem=2, tempo=17
+[22-Sep-2025 10:21:35 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:22:32 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=1, tempo=40
+[22-Sep-2025 10:22:32 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:22:32 America/Fortaleza] addMidia() chamado: playlist=62, midia=83, ordem=2, tempo=17
+[22-Sep-2025 10:22:32 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:22:32 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=3, tempo=113
+[22-Sep-2025 10:22:32 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:26:15 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=1, tempo=40
+[22-Sep-2025 10:26:15 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:26:15 America/Fortaleza] addMidia() chamado: playlist=62, midia=83, ordem=2, tempo=17
+[22-Sep-2025 10:26:15 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:26:15 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=3, tempo=113
+[22-Sep-2025 10:26:15 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:26:15 America/Fortaleza] addMidia() chamado: playlist=62, midia=84, ordem=4, tempo=47
+[22-Sep-2025 10:26:15 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:40:02 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=1, tempo=40
+[22-Sep-2025 10:40:02 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:40:02 America/Fortaleza] addMidia() chamado: playlist=62, midia=83, ordem=2, tempo=17
+[22-Sep-2025 10:40:02 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:40:02 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=3, tempo=113
+[22-Sep-2025 10:40:02 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:40:02 America/Fortaleza] addMidia() chamado: playlist=62, midia=84, ordem=4, tempo=47
+[22-Sep-2025 10:40:02 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 62
+[22-Sep-2025 10:40:02 America/Fortaleza] addMidia() chamado: playlist=62, midia=85, ordem=5, tempo=30
+[22-Sep-2025 10:40:02 America/Fortaleza] ✅ Mídia 85 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=85, ordem=1, tempo=0
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 85 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=89, ordem=2, tempo=30
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 89 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=83, ordem=3, tempo=0
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=12, ordem=4, tempo=0
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=90, ordem=5, tempo=30
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 90 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=19, ordem=6, tempo=0
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=88, ordem=7, tempo=30
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 88 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:09:26 America/Fortaleza] addMidia() chamado: playlist=62, midia=84, ordem=8, tempo=0
+[22-Sep-2025 11:09:26 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 62
+[22-Sep-2025 11:17:57 America/Fortaleza] PlaylistController->create() chamado
+[22-Sep-2025 11:17:57 America/Fortaleza] Parâmetros: nome=Cielo TV's, telaId=5, dataInicio=2025-09-22 11:16:00, dataFim=2050-12-30 12:16:00
+[22-Sep-2025 11:17:57 America/Fortaleza] Mídias recebidas: [84,88,83,85,89,19,12]
+[22-Sep-2025 11:17:57 America/Fortaleza] Criando playlist no banco...
+[22-Sep-2025 11:17:57 America/Fortaleza] Playlist criada com ID: 66
+[22-Sep-2025 11:17:57 America/Fortaleza] Playlist criada com ID: 66
+[22-Sep-2025 11:17:57 America/Fortaleza] Processando 7 mídias...
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 69
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 70
+[22-Sep-2025 11:17:57 America/Fortaleza] PHP Warning:  Trying to access array offset on int in /home2/dani7103/comunica.danielsantos.eng.br/controllers/PlaylistController.php on line 71
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Mídia ID inválido: 
+[22-Sep-2025 11:17:57 America/Fortaleza] Total de mídias salvas: 0
+[22-Sep-2025 11:17:57 America/Fortaleza] AVISO: Nenhuma mídia foi salva
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=89, ordem=1, tempo=30
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 89 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=85, ordem=2, tempo=30
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 85 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=90, ordem=3, tempo=30
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 90 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=83, ordem=4, tempo=17
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=88, ordem=5, tempo=30
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 88 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=84, ordem=6, tempo=47
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=12, ordem=7, tempo=30
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 66
+[22-Sep-2025 11:19:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=19, ordem=8, tempo=113
+[22-Sep-2025 11:19:23 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=89, ordem=1, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 89 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=85, ordem=2, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 85 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=90, ordem=3, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 90 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=83, ordem=4, tempo=17
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=88, ordem=5, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 88 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=84, ordem=6, tempo=47
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=12, ordem=7, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=19, ordem=8, tempo=113
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 66
+[06-Nov-2025 12:08:51 America/Fortaleza] addMidia() chamado: playlist=66, midia=98, ordem=9, tempo=30
+[06-Nov-2025 12:08:51 America/Fortaleza] ✅ Mídia 98 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:14:57 America/Fortaleza] Mídias carregadas para playlist 66: 9 (caminhos corrigidos)
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=89, ordem=1, tempo=30
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 89 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=85, ordem=2, tempo=30
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 85 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=90, ordem=3, tempo=30
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 90 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=83, ordem=4, tempo=17
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 83 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=88, ordem=5, tempo=30
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 88 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=84, ordem=6, tempo=47
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 84 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=12, ordem=7, tempo=30
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 12 adicionada com sucesso à playlist 66
+[06-Nov-2025 15:16:23 America/Fortaleza] addMidia() chamado: playlist=66, midia=19, ordem=8, tempo=113
+[06-Nov-2025 15:16:23 America/Fortaleza] ✅ Mídia 19 adicionada com sucesso à playlist 66

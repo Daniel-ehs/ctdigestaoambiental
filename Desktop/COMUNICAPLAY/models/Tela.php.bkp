@@ -1,0 +1,215 @@
+<?php
+
+require_once __DIR__ . '/Database.php';
+require_once __DIR__ . '/../includes/functions.php';
+
+class Tela {
+    private $db;
+    
+    public function __construct() {
+        $this->db = Database::getInstance();
+    }
+    
+    public function create($nome, $descricao = '', $resolucao = '1920x1080', $localizacao = '', $comMoldura = 0) {
+        try {
+            $hashUnico = generateUniqueHash(32);
+            
+            // Usando PDO puro em vez de bind_param (MySQLi)
+            $stmt = $this->db->getConnection()->prepare("INSERT INTO telas (nome, descricao, hash_unico, resolucao, localizacao, com_moldura) VALUES (?, ?, ?, ?, ?, ?)");
+            
+            if ($stmt->execute([$nome, $descricao, $hashUnico, $resolucao, $localizacao, $comMoldura])) {
+                return [
+                    'id' => $this->db->getConnection()->lastInsertId(),
+                    'hash_unico' => $hashUnico
+                ];
+            }
+            
+            return false;
+        } catch (Exception $e) {
+            error_log("Erro ao criar tela: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function getAll($limit = null, $offset = 0) {
+        try {
+            $sql = "SELECT id, nome, descricao, hash_unico, status, ultima_verificacao, resolucao, localizacao, com_moldura, ativo, data_criacao FROM telas WHERE ativo = 1 ORDER BY nome";
+            
+            if ($limit) {
+                $sql .= " LIMIT ? OFFSET ?";
+                $stmt = $this->db->getConnection()->prepare($sql);
+                $stmt->execute([$limit, $offset]);
+            } else {
+                $stmt = $this->db->getConnection()->prepare($sql);
+                $stmt->execute();
+            }
+            
+            $telas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            return $telas;
+        } catch (Exception $e) {
+            error_log("Erro ao buscar telas: " . $e->getMessage());
+            return [];
+        }
+    }
+    
+    public function getById($id) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("SELECT * FROM telas WHERE id = ? AND ativo = 1");
+            $stmt->execute([$id]);
+            
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar tela por ID: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function getByHash($hash) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("SELECT * FROM telas WHERE hash_unico = ? AND ativo = 1");
+            $stmt->execute([$hash]);
+            
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar tela por hash: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function update($id, $nome, $descricao = '', $resolucao = '1920x1080', $localizacao = '', $comMoldura = 0) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("UPDATE telas SET nome = ?, descricao = ?, resolucao = ?, localizacao = ?, com_moldura = ? WHERE id = ? AND ativo = 1");
+            
+            return $stmt->execute([$nome, $descricao, $resolucao, $localizacao, $comMoldura, $id]);
+        } catch (Exception $e) {
+            error_log("Erro ao atualizar tela: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function delete($id) {
+        try {
+            // Soft delete - marca como inativo
+            $stmt = $this->db->getConnection()->prepare("UPDATE telas SET ativo = 0 WHERE id = ?");
+            
+            return $stmt->execute([$id]);
+        } catch (Exception $e) {
+            error_log("Erro ao deletar tela: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function regenerateHash($id) {
+        try {
+            $novoHash = generateUniqueHash(32);
+            $stmt = $this->db->getConnection()->prepare("UPDATE telas SET hash_unico = ? WHERE id = ? AND ativo = 1");
+            
+            if ($stmt->execute([$novoHash, $id])) {
+                return $novoHash;
+            }
+            
+            return false;
+        } catch (Exception $e) {
+            error_log("Erro ao regenerar hash: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function updateHeartbeat($hash) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("UPDATE telas SET ultima_verificacao = NOW(), status = 'online' WHERE hash_unico = ? AND ativo = 1");
+            
+            return $stmt->execute([$hash]);
+        } catch (Exception $e) {
+            error_log("Erro ao atualizar heartbeat: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function getStatusSummary() {
+        try {
+            $stmt = $this->db->getConnection()->prepare("
+                SELECT 
+                    COUNT(*) as total,
+                    SUM(CASE WHEN status = 'online' AND ultima_verificacao > DATE_SUB(NOW(), INTERVAL 5 MINUTE) THEN 1 ELSE 0 END) as online,
+                    SUM(CASE WHEN status != 'online' OR ultima_verificacao <= DATE_SUB(NOW(), INTERVAL 5 MINUTE) OR ultima_verificacao IS NULL THEN 1 ELSE 0 END) as offline
+                FROM telas 
+                WHERE ativo = 1
+            ");
+            $stmt->execute();
+            
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar resumo de status: " . $e->getMessage());
+            return ['total' => 0, 'online' => 0, 'offline' => 0];
+        }
+    }
+    
+    public function getTelasByUser($userId) {
+        try {
+            // Para administradores, retorna todas as telas
+            $stmt = $this->db->getConnection()->prepare("SELECT * FROM telas WHERE ativo = 1 ORDER BY nome");
+            $stmt->execute();
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar telas do usuário: " . $e->getMessage());
+            return [];
+        }
+    }
+    
+    public function hasUserAccess($telaId, $userId) {
+        try {
+            // Para simplificar, vamos permitir acesso a todas as telas para usuários logados
+            return true;
+        } catch (Exception $e) {
+            error_log("Erro ao verificar acesso: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function getPlaylistAtiva($telaId) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("
+                SELECT p.* 
+                FROM playlists p 
+                WHERE p.tela_id = ? 
+                AND p.ativo = 1 
+                AND (
+                    (p.data_inicio IS NULL OR p.data_inicio <= NOW()) 
+                    AND (p.data_fim IS NULL OR p.data_fim >= NOW())
+                )
+                ORDER BY p.data_inicio DESC 
+                LIMIT 1
+            ");
+            $stmt->execute([$telaId]);
+            
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar playlist ativa: " . $e->getMessage());
+            return false;
+        }
+    }
+    
+    public function getPlaylistMidias($playlistId) {
+        try {
+            $stmt = $this->db->getConnection()->prepare("
+                SELECT m.*, pm.ordem, pm.duracao_personalizada
+                FROM midias m
+                INNER JOIN playlist_midias pm ON m.id = pm.midia_id
+                WHERE pm.playlist_id = ? AND m.ativo = 1
+                ORDER BY pm.ordem ASC
+            ");
+            $stmt->execute([$playlistId]);
+            
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            error_log("Erro ao buscar mídias da playlist: " . $e->getMessage());
+            return [];
+        }
+    }
+}
+
+?>
+

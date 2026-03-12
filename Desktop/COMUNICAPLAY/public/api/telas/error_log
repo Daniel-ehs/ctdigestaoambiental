@@ -1,0 +1,12 @@
+[03-Aug-2025 01:02:45 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /home2/dani7103/epi.danielsantos.eng.br/models/Tela.php:18
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/controllers/TelaController.php(41): Tela->create('TV 1 - CIELO', '', '1920x1080', '')
+#1 /home2/dani7103/epi.danielsantos.eng.br/public/api/telas/create.php(36): TelaController->create('TV 1 - CIELO', '', '1920x1080', '')
+#2 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/models/Tela.php on line 18
+[03-Aug-2025 01:03:43 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to undefined method PDOStatement::bind_param() in /home2/dani7103/epi.danielsantos.eng.br/models/Tela.php:18
+Stack trace:
+#0 /home2/dani7103/epi.danielsantos.eng.br/controllers/TelaController.php(41): Tela->create('TV1 - CIELO', '', '1920x1080', '')
+#1 /home2/dani7103/epi.danielsantos.eng.br/public/api/telas/create.php(36): TelaController->create('TV1 - CIELO', '', '1920x1080', '')
+#2 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/models/Tela.php on line 18

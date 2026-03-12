@@ -1,0 +1,352 @@
+[04-Aug-2025 13:08:58 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[04-Aug-2025 13:08:58 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[04-Aug-2025 13:09:06 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[04-Aug-2025 13:09:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[04-Aug-2025 13:11:06 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[04-Aug-2025 13:11:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[04-Aug-2025 13:12:06 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[04-Aug-2025 13:12:06 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[04-Aug-2025 13:22:21 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[04-Aug-2025 13:22:21 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[05-Aug-2025 14:26:50 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[05-Aug-2025 14:26:50 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[05-Aug-2025 21:50:10 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[05-Aug-2025 21:50:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[05-Aug-2025 21:50:22 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[05-Aug-2025 21:50:22 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 3
+[06-Aug-2025 00:48:41 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[06-Aug-2025 00:48:41 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../controllers/MidiaController.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 3
+[06-Aug-2025 22:36:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[06-Aug-2025 22:36:40 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[06-Aug-2025 22:36:40 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[06-Aug-2025 22:38:10 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[06-Aug-2025 22:38:10 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[06-Aug-2025 22:38:10 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[07-Aug-2025 00:10:55 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[07-Aug-2025 00:10:55 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 00:10:55 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[07-Aug-2025 00:11:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[07-Aug-2025 00:11:08 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 00:11:08 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[07-Aug-2025 08:56:45 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[07-Aug-2025 08:56:45 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 08:56:45 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[07-Aug-2025 14:50:02 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[07-Aug-2025 14:50:02 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 14:50:02 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[07-Aug-2025 14:50:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[07-Aug-2025 14:50:14 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 14:50:14 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[07-Aug-2025 21:42:23 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[07-Aug-2025 21:42:23 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 21:42:23 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[07-Aug-2025 21:52:31 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[07-Aug-2025 21:52:31 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 21:52:31 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[07-Aug-2025 21:59:28 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[07-Aug-2025 21:59:28 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[07-Aug-2025 21:59:28 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 15:57:21 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 15:57:21 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 15:57:21 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 19:35:45 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 19:35:45 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:35:45 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 19:35:57 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[08-Aug-2025 19:35:57 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:35:57 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[08-Aug-2025 19:36:00 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 19:36:00 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:36:00 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 19:36:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 19:36:14 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:36:14 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 19:36:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 19:36:22 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:36:22 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 10
+[08-Aug-2025 19:38:23 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[08-Aug-2025 19:38:23 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:38:23 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[08-Aug-2025 19:38:35 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[08-Aug-2025 19:38:35 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:38:35 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 10
+[08-Aug-2025 19:45:35 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 19:45:39 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 19:46:14 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 5
+[08-Aug-2025 19:46:14 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:46:14 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 26
+[08-Aug-2025 19:52:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 5
+[08-Aug-2025 19:52:16 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 19:52:16 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 43
+[08-Aug-2025 20:04:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 20:04:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 20:04:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[08-Aug-2025 20:04:17 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[08-Aug-2025 22:55:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 22:55:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 22:55:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[08-Aug-2025 22:55:53 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[08-Aug-2025 22:56:01 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 22:56:01 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 22:56:01 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[08-Aug-2025 22:56:01 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 5
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 6
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 7
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 8
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/dani7103/epi.danielsantos.eng.br/includes/session.php on line 10
+[08-Aug-2025 22:56:16 America/Fortaleza] PHP Warning:  http_response_code(): Cannot set response code - headers already sent (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/delete-midia.php on line 43
+[08-Aug-2025 23:03:19 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 23:03:19 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 23:03:19 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[08-Aug-2025 23:03:19 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[08-Aug-2025 23:11:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[08-Aug-2025 23:11:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[08-Aug-2025 23:11:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[08-Aug-2025 23:11:40 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[09-Aug-2025 00:40:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[09-Aug-2025 00:40:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[09-Aug-2025 00:40:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[09-Aug-2025 00:40:07 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[09-Aug-2025 13:42:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[09-Aug-2025 13:42:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[09-Aug-2025 13:42:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[09-Aug-2025 13:42:20 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[09-Aug-2025 14:01:41 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 3
+[09-Aug-2025 14:01:41 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 3
+[09-Aug-2025 14:02:21 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 3
+[09-Aug-2025 14:02:21 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 3
+[09-Aug-2025 14:16:36 America/Fortaleza] PHP Warning:  require_once(/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php): Failed to open stream: No such file or directory in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 4
+[09-Aug-2025 14:16:36 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required '/home2/dani7103/epi.danielsantos.eng.br/public/api/midias/../../includes/session.php' (include_path='.:/opt/cpanel/ea-php83/root/usr/share/pear') in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php:4
+Stack trace:
+#0 {main}
+  thrown in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/add-site.php on line 4
+[09-Aug-2025 14:27:12 America/Fortaleza] === ADD-SITE DIRETO ===
+[09-Aug-2025 14:27:12 America/Fortaleza] POST data: {"url":"https:\/\/g1.globo.com\/","nome":"g1.globo.com","descricao":"","duracao":"30","pasta_id":""}
+[09-Aug-2025 14:27:12 America/Fortaleza] Dados processados - URL: https://g1.globo.com/, Nome: g1.globo.com, Duração: 30
+[09-Aug-2025 14:27:12 America/Fortaleza] Usuário ID: 2
+[09-Aug-2025 14:27:13 America/Fortaleza] Resultado da inserção - ID: 11
+[09-Aug-2025 14:27:13 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[09-Aug-2025 18:28:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[09-Aug-2025 18:28:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[09-Aug-2025 18:28:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[09-Aug-2025 18:28:03 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[10-Aug-2025 23:12:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[10-Aug-2025 23:12:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[10-Aug-2025 23:12:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[10-Aug-2025 23:12:59 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[12-Aug-2025 13:29:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[12-Aug-2025 13:29:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[12-Aug-2025 13:29:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[12-Aug-2025 13:29:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/epi.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/epi.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[12-Aug-2025 13:30:02 America/Fortaleza] === ADD-SITE DIRETO ===
+[12-Aug-2025 13:30:02 America/Fortaleza] POST data: {"url":"https:\/\/inspecao.ctdisystem.com.br\/index.php?route=reportar&empresa_id=1&ano=2025&mes=8","nome":"Inspe\u00e7\u00e3o EHS (Site)","descricao":"","duracao":"30","pasta_id":"2"}
+[12-Aug-2025 13:30:02 America/Fortaleza] Dados processados - URL: https://inspecao.ctdisystem.com.br/index.php?route=reportar&empresa_id=1&ano=2025&mes=8, Nome: Inspeção EHS (Site), Duração: 30
+[12-Aug-2025 13:30:02 America/Fortaleza] Usuário ID: 2
+[12-Aug-2025 13:30:02 America/Fortaleza] Resultado da inserção - ID: 12
+[12-Aug-2025 13:30:02 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[29-Aug-2025 13:39:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[29-Aug-2025 13:39:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[29-Aug-2025 13:39:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[29-Aug-2025 13:39:18 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[29-Aug-2025 13:41:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[29-Aug-2025 13:41:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[29-Aug-2025 13:41:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[29-Aug-2025 13:41:24 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[29-Aug-2025 13:45:11 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[29-Aug-2025 13:45:11 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[29-Aug-2025 13:45:11 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[29-Aug-2025 13:45:11 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[29-Aug-2025 13:49:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[29-Aug-2025 13:49:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[29-Aug-2025 13:49:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[29-Aug-2025 13:49:25 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[04-Sep-2025 09:33:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[04-Sep-2025 09:33:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[04-Sep-2025 09:33:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[04-Sep-2025 09:33:22 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[04-Sep-2025 09:40:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 5
+[04-Sep-2025 09:40:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 6
+[04-Sep-2025 09:40:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 7
+[04-Sep-2025 09:40:08 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/dani7103/comunica.danielsantos.eng.br/config/config.php:30) in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/get-midia.php on line 8
+[21-Sep-2025 15:00:54 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:00:59 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:00:59 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:01:01 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:01:01 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:01:01 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:01:23 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:04:47 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:04:47 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:41:40 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:41:48 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:41:48 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:42:25 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:42:26 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 15:42:27 America/Fortaleza] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function MidiaController::uploadVideo(), 2 passed in /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php on line 61 and at least 3 expected in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php:21
+Stack trace:
+#0 /home2/dani7103/comunica.danielsantos.eng.br/public/api/midias/upload-video.php(61): MidiaController->uploadVideo(Array, NULL)
+#1 {main}
+  thrown in /home2/dani7103/comunica.danielsantos.eng.br/controllers/MidiaController.php on line 21
+[21-Sep-2025 19:12:55 America/Fortaleza] === ADD-SITE DIRETO ===
+[21-Sep-2025 19:12:55 America/Fortaleza] POST data: {"url":"https:\/\/g1.globo.com\/","nome":"tese","duracao":"30","pasta_id":""}
+[21-Sep-2025 19:12:55 America/Fortaleza] Dados processados - URL: https://g1.globo.com/, Nome: tese, Duração: 30
+[21-Sep-2025 19:12:55 America/Fortaleza] Usuário ID: 2
+[21-Sep-2025 19:12:55 America/Fortaleza] Resultado da inserção - ID: 59
+[21-Sep-2025 19:12:55 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[21-Sep-2025 19:17:29 America/Fortaleza] === ADD-SITE DIRETO ===
+[21-Sep-2025 19:17:29 America/Fortaleza] POST data: {"url":"https:\/\/dds.danielsantos.eng.br","nome":"teste site","duracao":"30","pasta_id":""}
+[21-Sep-2025 19:17:29 America/Fortaleza] Dados processados - URL: https://dds.danielsantos.eng.br, Nome: teste site, Duração: 30
+[21-Sep-2025 19:17:29 America/Fortaleza] Usuário ID: 2
+[21-Sep-2025 19:17:29 America/Fortaleza] Resultado da inserção - ID: 63
+[21-Sep-2025 19:17:29 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[21-Sep-2025 21:40:52 America/Fortaleza] Erro no upload de vídeo (API): Nenhum arquivo de vídeo foi enviado ou houve erro no upload. Código do erro: 3
+[06-Nov-2025 12:07:20 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:20 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:20 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:20 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:20 America/Fortaleza] Resultado da inserção - ID: 91
+[06-Nov-2025 12:07:20 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:23 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:23 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:23 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:23 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:23 America/Fortaleza] Resultado da inserção - ID: 92
+[06-Nov-2025 12:07:23 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:28 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:28 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:28 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:28 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:28 America/Fortaleza] Resultado da inserção - ID: 93
+[06-Nov-2025 12:07:28 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:32 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:32 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:32 America/Fortaleza] Resultado da inserção - ID: 94
+[06-Nov-2025 12:07:32 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:32 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:32 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:32 America/Fortaleza] Resultado da inserção - ID: 95
+[06-Nov-2025 12:07:32 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:32 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:32 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:32 America/Fortaleza] Resultado da inserção - ID: 96
+[06-Nov-2025 12:07:32 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:32 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:32 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:32 America/Fortaleza] Resultado da inserção - ID: 97
+[06-Nov-2025 12:07:32 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:32 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:32 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:32 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:32 America/Fortaleza] Resultado da inserção - ID: 98
+[06-Nov-2025 12:07:32 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:33 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:33 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:33 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:33 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:33 America/Fortaleza] Resultado da inserção - ID: 99
+[06-Nov-2025 12:07:33 America/Fortaleza] === FIM ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:33 America/Fortaleza] === ADD-SITE DIRETO ===
+[06-Nov-2025 12:07:33 America/Fortaleza] POST data: {"url":"https:\/\/cieloolp.ctdi.com\/#\/order\/order-dashboard","nome":"Indicador Produ\u00e7\u00e3o","duracao":"30","pasta_id":"2"}
+[06-Nov-2025 12:07:33 America/Fortaleza] Dados processados - URL: https://cieloolp.ctdi.com/#/order/order-dashboard, Nome: Indicador Produção, Duração: 30
+[06-Nov-2025 12:07:33 America/Fortaleza] Usuário ID: 2
+[06-Nov-2025 12:07:33 America/Fortaleza] Resultado da inserção - ID: 100
+[06-Nov-2025 12:07:33 America/Fortaleza] === FIM ADD-SITE DIRETO ===
