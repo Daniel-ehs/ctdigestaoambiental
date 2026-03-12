@@ -1,4 +1,5 @@
 # Sistema de Gerenciamento de Funcionários - Configurações Apache
+DirectoryIndex public/index.php
 
 # Configurações de segurança
 Options -Indexes
