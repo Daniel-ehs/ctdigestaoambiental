@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once __DIR__ . 
 '/../models/Midia.php';
@@ -590,9 +590,3 @@ class MidiaController {
         }
     }
 }
-
-?>
-?>
-?>
-
-

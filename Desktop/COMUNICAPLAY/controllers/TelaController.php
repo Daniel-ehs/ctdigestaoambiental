@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once __DIR__ . '/../models/Tela.php';
 require_once __DIR__ . '/../includes/session.php';
@@ -396,6 +396,3 @@ class TelaController {
         }
     }
 }
-
-?>
-

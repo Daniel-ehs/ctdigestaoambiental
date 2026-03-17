@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once __DIR__ . 
 '/../models/User.php';
@@ -213,6 +213,3 @@ class AuthController {
         $this->clearLoginAttempts($email);
     }
 }
-
-?>
-

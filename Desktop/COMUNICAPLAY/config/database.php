@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 return [
     'host' => getenv('DB_HOST') ?: 'localhost',
@@ -7,6 +7,3 @@ return [
     'password' => getenv('DB_PASSWORD') ?: 'nova@2025',
     'charset' => 'utf8mb4' // Mantemos o charset para compatibilidade
 ];
-
-?>
-
