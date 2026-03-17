@@ -235,6 +235,10 @@ $currentPage = basename($_SERVER["PHP_SELF"], ".php");
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
             }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
             
             .main-footer {
                 margin-left: 0; /* Mantém largura total em dispositivos móveis */
@@ -247,9 +251,14 @@ $currentPage = basename($_SERVER["PHP_SELF"], ".php");
 <body>
     <div class="main-wrapper">
         <header class="main-header">
-            <div class="logo">
-                <i class="bi bi-tv"></i>
-                Comunica Play
+            <div class="d-flex align-items-center">
+                <button id="sidebar-toggle" class="btn btn-link text-white d-md-none me-3 p-0 text-decoration-none">
+                    <i class="bi bi-list" style="font-size: 1.8rem;"></i>
+                </button>
+                <div class="logo">
+                    <i class="bi bi-tv"></i>
+                    <span class="d-none d-sm-inline">Comunica Play</span>
+                </div>
             </div>
             
             <div class="user-info d-flex align-items-center">
@@ -391,6 +400,30 @@ $currentPage = basename($_SERVER["PHP_SELF"], ".php");
             <?= $inlineJS ?>
         </script>
     <?php endif; ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (toggleBtn && sidebar) {
+                toggleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    sidebar.classList.toggle('show');
+                });
+                
+                // Fechar sidebar ao clicar fora em telas pequenas
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target) && sidebar.classList.contains('show')) {
+                            sidebar.classList.remove('show');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 
