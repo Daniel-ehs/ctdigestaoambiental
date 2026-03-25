@@ -1,4 +1,29 @@
 {
   "schemaVersion": 2,
-  "dockerfilePath": "./Dockerfile"
+  "dockerfileLines": [
+    "FROM node:20-alpine AS builder",
+    "RUN apk -U add openssl",
+    "WORKDIR /app",
+    "COPY package*.json ./",
+    "COPY prisma ./prisma/",
+    "RUN npm install",
+    "COPY . .",
+    "RUN npm run build",
+    "RUN npx prisma generate",
+    "FROM node:20-alpine",
+    "RUN apk -U add openssl",
+    "ENV NODE_ENV=production",
+    "ENV PORT=3000",
+    "WORKDIR /app",
+    "COPY package*.json ./",
+    "RUN npm install --production",
+    "RUN npm install -D prisma",
+    "COPY --from=builder /app/dist ./dist",
+    "COPY --from=builder /app/prisma ./prisma",
+    "COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma",
+    "COPY . .",
+    "RUN chmod +x start.sh",
+    "EXPOSE 3000",
+    "CMD [\"./start.sh\"]"
+  ]
 }

@@ -38,15 +38,9 @@ COPY package*.json ./
 RUN npm install --production
 RUN npm install -D typescript ts-node prisma
 
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 COPY . .
+RUN chmod +x start.sh
 
 EXPOSE 3000
 
-# Start command: Apply migrations (if possible) then start server
-# Note: In CapRover, you might want to run migrations manually or in a separate command, 
-# but for simplicity we can try to run them on start or just generate client.
-# Better to use a start script.
-CMD ["npm", "run", "start:prod"]
+CMD ["./start.sh"]
