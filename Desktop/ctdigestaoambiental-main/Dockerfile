@@ -1,5 +1,8 @@
 # Build Stage
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
+
+# Install openssl for Prisma
+RUN apk -U add openssl
 
 WORKDIR /app
 
@@ -16,7 +19,9 @@ RUN npm run build
 RUN npx prisma generate
 
 # Production Stage
-FROM node:18-alpine
+FROM node:20-alpine
+
+RUN apk -U add openssl
 
 WORKDIR /app
 
