@@ -1,0 +1,23 @@
+Environment variables loaded from .env
+Prisma schema loaded from prisma\schema.prisma
+Error: Prisma schema validation - (get-dmmf wasm)
+Error code: P1012
+[1;91merror[0m: [1mField "allowedUnits" in model "User" can't be a list. The current connector does not support lists of primitive types.[0m
+  [1;94m-->[0m  [4mprisma\schema.prisma:16[0m
+[1;94m   | [0m
+[1;94m15 | [0m  role         String   // 'manager' or 'viewer'
+[1;94m16 | [0m  [1;91mallowedUnits String[] // Array of strings for allowed units[0m
+[1;94m17 | [0m  createdAt    DateTime @default(now())
+[1;94m   | [0m
+[1;91merror[0m: [1mField "units" in model "SystemSettings" can't be a list. The current connector does not support lists of primitive types.[0m
+  [1;94m-->[0m  [4mprisma\schema.prisma:57[0m
+[1;94m   | [0m
+[1;94m56 | [0m  id              String   @id @default(uuid())
+[1;94m57 | [0m  [1;91munits           String[][0m
+[1;94m58 | [0m  electricityGoal Float
+[1;94m   | [0m
+
+Validation Error Count: 2
+[Context: getDmmf]
+
+Prisma CLI Version : 5.22.0
