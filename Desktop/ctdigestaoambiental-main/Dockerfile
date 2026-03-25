@@ -26,6 +26,9 @@ FROM node:20-alpine
 
 RUN apk -U add openssl
 
+ENV NODE_ENV=production
+ENV PORT=3000
+
 WORKDIR /app
 
 COPY package*.json ./
