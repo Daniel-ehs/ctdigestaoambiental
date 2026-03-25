@@ -4,6 +4,9 @@ FROM node:20-alpine AS builder
 # Install openssl for Prisma
 RUN apk -U add openssl
 
+ENV NODE_ENV=production
+ENV PORT=3000
+
 WORKDIR /app
 
 COPY package*.json ./
